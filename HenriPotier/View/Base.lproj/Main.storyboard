@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L5r-gW-Ykr">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ng8-5d-5cN">
+            <objects>
+                <navigationController id="L5r-gW-Ykr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4wk-SN-pBs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AKc-eB-sLo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wqy-Xz-2at" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-726" y="139"/>
+        </scene>
+        <!--Books-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BookStoreViewController" customModule="Henri_Potier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XA7-OG-6tu">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookTableViewCell" id="DEy-TN-kUE" customClass="BookTableViewCell" customModule="Henri_Potier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="169.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DEy-TN-kUE" id="X7G-sJ-OwY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pi6-Ne-wp0" userLabel="Book View">
+                                                    <rect key="frame" x="25" y="21" width="325" height="127.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="d4Q-1Y-okH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="81.5" height="81.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="d4Q-1Y-okH" secondAttribute="height" multiplier="1:1" id="FZD-yo-Uuu"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPu-aq-PjI" userLabel="Description View">
+                                                            <rect key="frame" x="97.5" y="0.0" width="227.5" height="127.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henri Potier à l'école des sorciers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67o-0X-1kR">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="227.5" height="42.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-UA-EUR">
+                                                                    <rect key="frame" x="0.0" y="42.5" width="227.5" height="65.5"/>
+                                                                    <string key="text">Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily) et son oncle Vernon à l'âge d'un an. Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir.</string>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="67o-0X-1kR" secondAttribute="trailing" id="1cZ-dM-zhB"/>
+                                                                <constraint firstItem="67o-0X-1kR" firstAttribute="leading" secondItem="OPu-aq-PjI" secondAttribute="leading" id="SrY-wX-WZe"/>
+                                                                <constraint firstItem="1M5-UA-EUR" firstAttribute="leading" secondItem="OPu-aq-PjI" secondAttribute="leading" id="aA0-GL-3Dj"/>
+                                                                <constraint firstAttribute="trailing" secondItem="1M5-UA-EUR" secondAttribute="trailing" id="b3C-eS-eGY"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1M5-UA-EUR" secondAttribute="bottom" id="hH7-OE-u9k"/>
+                                                                <constraint firstItem="67o-0X-1kR" firstAttribute="top" secondItem="OPu-aq-PjI" secondAttribute="top" id="qmd-vY-6bo"/>
+                                                                <constraint firstItem="1M5-UA-EUR" firstAttribute="top" secondItem="67o-0X-1kR" secondAttribute="bottom" id="rDB-B7-4Fv"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="d4Q-1Y-okH" secondAttribute="bottom" id="VOw-YH-wl0"/>
+                                                        <constraint firstItem="d4Q-1Y-okH" firstAttribute="width" secondItem="Pi6-Ne-wp0" secondAttribute="width" multiplier="1:4" id="gcw-en-UgP"/>
+                                                        <constraint firstAttribute="bottom" secondItem="OPu-aq-PjI" secondAttribute="bottom" id="hBd-RU-8P7"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Pi6-Ne-wp0" firstAttribute="leading" secondItem="X7G-sJ-OwY" secondAttribute="leadingMargin" constant="10" id="L08-gZ-5SC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Pi6-Ne-wp0" secondAttribute="trailing" constant="10" id="P2K-M7-A1U"/>
+                                                <constraint firstItem="Pi6-Ne-wp0" firstAttribute="top" secondItem="X7G-sJ-OwY" secondAttribute="topMargin" constant="10" id="XZN-Rr-MEG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Pi6-Ne-wp0" secondAttribute="bottom" constant="10" id="aVz-bc-Lu1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cover" destination="d4Q-1Y-okH" id="dBK-Zi-ifl"/>
+                                            <outlet property="synopsis" destination="1M5-UA-EUR" id="5af-8I-yUc"/>
+                                            <outlet property="title" destination="67o-0X-1kR" id="Oyf-y5-T8u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XA7-OG-6tu" secondAttribute="bottom" id="8dz-O6-Qt9"/>
+                            <constraint firstItem="XA7-OG-6tu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kxi-R9-Uf9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XA7-OG-6tu" secondAttribute="trailing" id="eU2-iR-BIp"/>
+                            <constraint firstItem="XA7-OG-6tu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sHd-iz-y7h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Books" id="ezV-fC-fMc">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="archivebox" catalog="system" id="NQM-s5-sTj">
+                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="booksTableView" destination="XA7-OG-6tu" id="rHT-PJ-MWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="archivebox" catalog="system" width="128" height="106"/>
+        <image name="placeholder" width="210" height="210"/>
+    </resources>
+</document>

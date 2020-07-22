@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  HenriPotier
+
+  Created by Nicolas Bouème on 22/07/2020.
+  Copyright © 2020 Nicolas Bouème. All rights reserved.
+*/
+
+// Application
+"app.name" = "Henri Potier";
+
+// BookStoreViewControler
+"bookStore.hasNotElements" = "No books are currently on sale. :(";

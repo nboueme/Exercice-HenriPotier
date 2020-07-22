@@ -3,17 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		158E980EB459AE18A6E3B835 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */; };
 		E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912524C88B020068F2FD /* AppDelegate.swift */; };
-		E53C912A24C88B020068F2FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912924C88B020068F2FD /* ViewController.swift */; };
+		E53C912A24C88B020068F2FD /* BookStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912924C88B020068F2FD /* BookStoreViewController.swift */; };
 		E53C912D24C88B020068F2FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53C912B24C88B020068F2FD /* Main.storyboard */; };
 		E53C912F24C88B080068F2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53C912E24C88B080068F2FD /* Assets.xcassets */; };
 		E53C913224C88B080068F2FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53C913024C88B080068F2FD /* LaunchScreen.storyboard */; };
 		E53C913D24C88B080068F2FD /* HenriPotierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C913C24C88B080068F2FD /* HenriPotierTests.swift */; };
+		E53C915024C89C560068F2FD /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E53C914E24C89C560068F2FD /* swiftlint.yml */; };
+		E53C915124C89C560068F2FD /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E53C914F24C89C560068F2FD /* swiftgen.yml */; };
+		E53C915524C89D890068F2FD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E53C915724C89D890068F2FD /* Localizable.strings */; };
+		E53C915C24C89DCE0068F2FD /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C915824C89DCE0068F2FD /* StoryboardSegues.swift */; };
+		E53C915D24C89DCE0068F2FD /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C915924C89DCE0068F2FD /* Assets.swift */; };
+		E53C915E24C89DCE0068F2FD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C915A24C89DCE0068F2FD /* Strings.swift */; };
+		E53C915F24C89DCE0068F2FD /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C915B24C89DCE0068F2FD /* StoryboardScenes.swift */; };
+		E53C916224C89F330068F2FD /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916124C89F330068F2FD /* BookTableViewCell.swift */; };
+		E53C916424C8A6830068F2FD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916324C8A6830068F2FD /* Book.swift */; };
+		E53C916624C8A69D0068F2FD /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916524C8A69D0068F2FD /* Offer.swift */; };
+		E53C916824C8A7570068F2FD /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916724C8A7570068F2FD /* BookStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +43,7 @@
 		D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
 		E53C912224C88B020068F2FD /* Henri Potier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henri Potier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53C912524C88B020068F2FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E53C912924C88B020068F2FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E53C912924C88B020068F2FD /* BookStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewController.swift; sourceTree = "<group>"; };
 		E53C912C24C88B020068F2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E53C912E24C88B080068F2FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E53C913124C88B080068F2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +51,17 @@
 		E53C913824C88B080068F2FD /* HenriPotierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HenriPotierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53C913C24C88B080068F2FD /* HenriPotierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierTests.swift; sourceTree = "<group>"; };
 		E53C913E24C88B080068F2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E53C914E24C89C560068F2FD /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
+		E53C914F24C89C560068F2FD /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		E53C915624C89D890068F2FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E53C915824C89DCE0068F2FD /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
+		E53C915924C89DCE0068F2FD /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		E53C915A24C89DCE0068F2FD /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		E53C915B24C89DCE0068F2FD /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
+		E53C916124C89F330068F2FD /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		E53C916324C8A6830068F2FD /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		E53C916524C8A69D0068F2FD /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		E53C916724C8A7570068F2FD /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +97,14 @@
 				D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */,
 				8936CEAB54709ABE0303F340 /* Pods-HenriPotier.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		E53C911924C88B020068F2FD = {
 			isa = PBXGroup;
 			children = (
+				E53C914F24C89C560068F2FD /* swiftgen.yml */,
+				E53C914E24C89C560068F2FD /* swiftlint.yml */,
 				E53C912424C88B020068F2FD /* HenriPotier */,
 				E53C913B24C88B080068F2FD /* HenriPotierTests */,
 				E53C912324C88B020068F2FD /* Products */,
@@ -102,11 +125,10 @@
 		E53C912424C88B020068F2FD /* HenriPotier */ = {
 			isa = PBXGroup;
 			children = (
-				E53C912524C88B020068F2FD /* AppDelegate.swift */,
-				E53C912924C88B020068F2FD /* ViewController.swift */,
-				E53C912B24C88B020068F2FD /* Main.storyboard */,
-				E53C912E24C88B080068F2FD /* Assets.xcassets */,
-				E53C913024C88B080068F2FD /* LaunchScreen.storyboard */,
+				E53C914724C892D30068F2FD /* Application */,
+				E53C914A24C893190068F2FD /* Model */,
+				E53C914824C892E30068F2FD /* View */,
+				E53C914B24C893240068F2FD /* ViewModel */,
 				E53C913324C88B080068F2FD /* Info.plist */,
 			);
 			path = HenriPotier;
@@ -121,6 +143,72 @@
 			path = HenriPotierTests;
 			sourceTree = "<group>";
 		};
+		E53C914724C892D30068F2FD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E53C914924C8930B0068F2FD /* Resources */,
+				E53C915224C89C8F0068F2FD /* Generated */,
+				E53C913024C88B080068F2FD /* LaunchScreen.storyboard */,
+				E53C912524C88B020068F2FD /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E53C914824C892E30068F2FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E53C916024C89F030068F2FD /* Cells */,
+				E53C912B24C88B020068F2FD /* Main.storyboard */,
+				E53C912924C88B020068F2FD /* BookStoreViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E53C914924C8930B0068F2FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E53C912E24C88B080068F2FD /* Assets.xcassets */,
+				E53C915724C89D890068F2FD /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E53C914A24C893190068F2FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E53C916324C8A6830068F2FD /* Book.swift */,
+				E53C916524C8A69D0068F2FD /* Offer.swift */,
+				E53C916724C8A7570068F2FD /* BookStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E53C914B24C893240068F2FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E53C915224C89C8F0068F2FD /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E53C915924C89DCE0068F2FD /* Assets.swift */,
+				E53C915B24C89DCE0068F2FD /* StoryboardScenes.swift */,
+				E53C915824C89DCE0068F2FD /* StoryboardSegues.swift */,
+				E53C915A24C89DCE0068F2FD /* Strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		E53C916024C89F030068F2FD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E53C916124C89F330068F2FD /* BookTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,6 +221,8 @@
 				E53C911F24C88B020068F2FD /* Frameworks */,
 				E53C912024C88B020068F2FD /* Resources */,
 				1756C085182878CAA5E37976 /* [CP] Embed Pods Frameworks */,
+				E53C914C24C89BD90068F2FD /* 💪 SwiftLint 👌 */,
+				E53C914D24C89C060068F2FD /* 💪 SwiftGen 👌 */,
 			);
 			buildRules = (
 			);
@@ -205,6 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53C913224C88B080068F2FD /* LaunchScreen.storyboard in Resources */,
+				E53C915524C89D890068F2FD /* Localizable.strings in Resources */,
+				E53C915124C89C560068F2FD /* swiftgen.yml in Resources */,
+				E53C915024C89C560068F2FD /* swiftlint.yml in Resources */,
 				E53C912F24C88B080068F2FD /* Assets.xcassets in Resources */,
 				E53C912D24C88B020068F2FD /* Main.storyboard in Resources */,
 			);
@@ -259,6 +352,42 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E53C914C24C89BD90068F2FD /* 💪 SwiftLint 👌 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "💪 SwiftLint 👌";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		E53C914D24C89C060068F2FD /* 💪 SwiftGen 👌 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "💪 SwiftGen 👌";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -266,8 +395,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E53C912A24C88B020068F2FD /* ViewController.swift in Sources */,
+				E53C916424C8A6830068F2FD /* Book.swift in Sources */,
+				E53C915C24C89DCE0068F2FD /* StoryboardSegues.swift in Sources */,
+				E53C912A24C88B020068F2FD /* BookStoreViewController.swift in Sources */,
+				E53C915E24C89DCE0068F2FD /* Strings.swift in Sources */,
+				E53C916224C89F330068F2FD /* BookTableViewCell.swift in Sources */,
+				E53C915D24C89DCE0068F2FD /* Assets.swift in Sources */,
+				E53C916624C8A69D0068F2FD /* Offer.swift in Sources */,
 				E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */,
+				E53C916824C8A7570068F2FD /* BookStore.swift in Sources */,
+				E53C915F24C89DCE0068F2FD /* StoryboardScenes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +441,14 @@
 				E53C913124C88B080068F2FD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E53C915724C89D890068F2FD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E53C915624C89D890068F2FD /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

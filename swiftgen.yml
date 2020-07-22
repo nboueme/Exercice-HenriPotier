@@ -1,0 +1,18 @@
+xcassets:
+  inputs: HenriPotier/Application/Resources/
+  filter: .+\.xcassets$
+  outputs:
+    templateName: swift4
+    output: HenriPotier/Application/Generated/Assets.swift
+ib:
+  inputs: HenriPotier/View/Base.lproj
+  outputs:
+    - templateName: scenes-swift4
+      output: HenriPotier/Application/Generated/StoryboardScenes.swift
+    - templateName: segues-swift4
+      output: HenriPotier/Application/Generated/StoryboardSegues.swift
+strings:
+  inputs: HenriPotier/Application/Resources/en.lproj/Localizable.strings
+  outputs:
+    templateName: structured-swift4
+    output: HenriPotier/Application/Generated/Strings.swift
