@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158E980EB459AE18A6E3B835 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */; };
 		E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912524C88B020068F2FD /* AppDelegate.swift */; };
-		E53C912824C88B020068F2FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912724C88B020068F2FD /* SceneDelegate.swift */; };
 		E53C912A24C88B020068F2FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912924C88B020068F2FD /* ViewController.swift */; };
 		E53C912D24C88B020068F2FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53C912B24C88B020068F2FD /* Main.storyboard */; };
 		E53C912F24C88B080068F2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53C912E24C88B080068F2FD /* Assets.xcassets */; };
@@ -27,9 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E53C912224C88B020068F2FD /* HenriPotier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HenriPotier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8936CEAB54709ABE0303F340 /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
+		D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
+		E53C912224C88B020068F2FD /* Henri Potier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henri Potier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53C912524C88B020068F2FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E53C912724C88B020068F2FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E53C912924C88B020068F2FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E53C912C24C88B020068F2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E53C912E24C88B080068F2FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158E980EB459AE18A6E3B835 /* Pods_HenriPotier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,19 +61,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12EEC9F636A0F5D242577EB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9712385A36ADFE48D8238BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */,
+				8936CEAB54709ABE0303F340 /* Pods-HenriPotier.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E53C911924C88B020068F2FD = {
 			isa = PBXGroup;
 			children = (
 				E53C912424C88B020068F2FD /* HenriPotier */,
 				E53C913B24C88B080068F2FD /* HenriPotierTests */,
 				E53C912324C88B020068F2FD /* Products */,
+				D9712385A36ADFE48D8238BE /* Pods */,
+				12EEC9F636A0F5D242577EB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E53C912324C88B020068F2FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E53C912224C88B020068F2FD /* HenriPotier.app */,
+				E53C912224C88B020068F2FD /* Henri Potier.app */,
 				E53C913824C88B080068F2FD /* HenriPotierTests.xctest */,
 			);
 			name = Products;
@@ -80,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				E53C912524C88B020068F2FD /* AppDelegate.swift */,
-				E53C912724C88B020068F2FD /* SceneDelegate.swift */,
 				E53C912924C88B020068F2FD /* ViewController.swift */,
 				E53C912B24C88B020068F2FD /* Main.storyboard */,
 				E53C912E24C88B080068F2FD /* Assets.xcassets */,
@@ -106,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E53C914124C88B080068F2FD /* Build configuration list for PBXNativeTarget "HenriPotier" */;
 			buildPhases = (
+				054B2FCDB57A559E73F1546D /* [CP] Check Pods Manifest.lock */,
 				E53C911E24C88B020068F2FD /* Sources */,
 				E53C911F24C88B020068F2FD /* Frameworks */,
 				E53C912024C88B020068F2FD /* Resources */,
+				1756C085182878CAA5E37976 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -116,7 +140,7 @@
 			);
 			name = HenriPotier;
 			productName = HenriPotier;
-			productReference = E53C912224C88B020068F2FD /* HenriPotier.app */;
+			productReference = E53C912224C88B020068F2FD /* Henri Potier.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E53C913724C88B080068F2FD /* HenriPotierTests */ = {
@@ -195,6 +219,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		054B2FCDB57A559E73F1546D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HenriPotier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1756C085182878CAA5E37976 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E53C911E24C88B020068F2FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -202,7 +268,6 @@
 			files = (
 				E53C912A24C88B020068F2FD /* ViewController.swift in Sources */,
 				E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */,
-				E53C912824C88B020068F2FD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +366,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -354,12 +420,14 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		E53C914224C88B080068F2FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -370,14 +438,15 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nboueme.HenriPotier;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Henri Potier";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E53C914324C88B080068F2FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8936CEAB54709ABE0303F340 /* Pods-HenriPotier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,9 +457,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nboueme.HenriPotier;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Henri Potier";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

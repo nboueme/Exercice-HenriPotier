@@ -1,0 +1,8 @@
+${PODS_ROOT}/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework
+${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework
+${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework
+${BUILT_PRODUCTS_DIR}/WeakMapTable/WeakMapTable.framework
