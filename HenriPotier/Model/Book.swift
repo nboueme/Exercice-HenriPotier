@@ -8,10 +8,18 @@
 
 import Foundation
 
-struct Book {
+struct Book: Decodable {
     let isbn: String
     let title: String
     let price: Double
     let cover: String?
     let synopsis: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case isbn
+        case title
+        case price
+        case cover
+        case synopsis
+    }
 }

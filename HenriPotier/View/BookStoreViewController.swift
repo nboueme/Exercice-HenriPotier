@@ -9,11 +9,14 @@
 import UIKit
 import DZNEmptyDataSet
 import SDWebImage
+import RxSwift
 
 final class BookStoreViewController: UIViewController {
     @IBOutlet weak var booksTableView: UITableView!
     
     var viewModel: BookStoreViewModeling?
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,7 @@ final class BookStoreViewController: UIViewController {
         
         selectedBookVC.viewModel = DependenciesManager.shared.container.resolve(
             BookViewModeling.self,
+            name: "cell",
             arguments: book.isbn.value, book.title.value, book.price.value, book.cover.value, book.synopsis.value)
     }
 }
@@ -42,6 +46,10 @@ extension BookStoreViewController {
     
     private func configureDataSource() {
         viewModel?.getBooksCells()
+        
+        viewModel?.booksCells.asObservable().subscribe { [weak self] _ in
+            self?.booksTableView.reloadData()
+        }.disposed(by: disposeBag)
     }
 }
 

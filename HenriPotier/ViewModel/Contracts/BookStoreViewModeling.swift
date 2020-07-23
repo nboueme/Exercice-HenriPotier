@@ -9,6 +9,9 @@
 import RxCocoa
 
 protocol BookStoreViewModeling {
+    var service: BookService { get }
     var booksCells: BehaviorRelay<[BookViewModeling]> { get }
     func getBooksCells()
+    
+    init(service: BookService)
 }

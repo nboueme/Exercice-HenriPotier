@@ -23,21 +23,25 @@ public final class DependenciesManager {
         
         container.storyboardInitCompleted(UINavigationController.self) { _, _ in }
         
+        // Services
+        container.register(BookService.self) { _ in BookService() }
+        
         // ViewModels
-        container.register(BookStoreViewModeling.self) { _ in BookStoreViewModel() }
-        container.register(BookViewModeling.self) { _, book in BookViewModel(with: book) }
-        container.register(BookViewModeling.self) { _, isbn, title, price, cover, synopsis in BookViewModel(isbn: isbn, title: title, price: price, cover: cover, synopsis: synopsis) }
+        container.register(BookStoreViewModeling.self) { _, service in BookStoreViewModel(service: service) }
+        container.register(BookViewModeling.self, name: "book") { _, book in BookViewModel(with: book) }
+        container.register(BookViewModeling.self, name: "cell") { _, isbn, title, price, cover, synopsis in
+            BookViewModel(isbn: isbn, title: title, price: price, cover: cover, synopsis: synopsis)
+        }
         
         // Views
         container.storyboardInitCompleted(BookStoreViewController.self) { resolver, controller in
-            controller.viewModel = resolver.resolve(BookStoreViewModeling.self)
+            controller.viewModel = resolver.resolve(
+                BookStoreViewModeling.self,
+                argument: container.resolve(BookService.self)!
+            )
         }
         container.storyboardInitCompleted(SelectedBookViewController.self) { resolver, controller in
-            let emptyString: String? = String()
-            controller.viewModel = resolver.resolve(
-                BookViewModeling.self,
-                arguments: "", "", 0.0, URL(string: ""), emptyString
-            )
+            controller.viewModel = resolver.resolve(BookViewModeling.self, name: "cell")
         }
         
         return container

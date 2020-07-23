@@ -8,8 +8,22 @@
 
 import Foundation
 
-enum Offer {
-    case percentage
-    case minus
-    case slice
+struct Offer: Decodable {
+    var type: String
+    var value: Int
+    var sliceValue: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case type
+        case value
+        case sliceValue
+    }
+}
+
+struct Offers: Decodable {
+    var offers: [Offer]
+    
+    enum CodingKeys: String, CodingKey {
+        case offers
+    }
 }

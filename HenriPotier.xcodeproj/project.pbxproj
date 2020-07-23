@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		158E980EB459AE18A6E3B835 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */; };
 		E52F0BA124C9F9530009A793 /* SelectedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */; };
+		E52F0BA924CA2C610009A793 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BA824CA2C610009A793 /* BookService.swift */; };
+		E52F0BAB24CA47F50009A793 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */; };
 		E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912524C88B020068F2FD /* AppDelegate.swift */; };
 		E53C912A24C88B020068F2FD /* BookStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912924C88B020068F2FD /* BookStoreViewController.swift */; };
 		E53C912D24C88B020068F2FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53C912B24C88B020068F2FD /* Main.storyboard */; };
@@ -25,7 +27,6 @@
 		E53C916224C89F330068F2FD /* BookCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916124C89F330068F2FD /* BookCellView.swift */; };
 		E53C916424C8A6830068F2FD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916324C8A6830068F2FD /* Book.swift */; };
 		E53C916624C8A69D0068F2FD /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916524C8A69D0068F2FD /* Offer.swift */; };
-		E53C916824C8A7570068F2FD /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916724C8A7570068F2FD /* BookStore.swift */; };
 		E57DB3FE24C9D82C0092598D /* BookStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB3FD24C9D82C0092598D /* BookStoreViewModel.swift */; };
 		E57DB40024C9D83C0092598D /* BookStoreViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB3FF24C9D83C0092598D /* BookStoreViewModeling.swift */; };
 		E57DB40224C9DAC90092598D /* DependenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40124C9DAC90092598D /* DependenciesManager.swift */; };
@@ -48,6 +49,8 @@
 		8936CEAB54709ABE0303F340 /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
 		D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
 		E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBookViewController.swift; sourceTree = "<group>"; };
+		E52F0BA824CA2C610009A793 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
+		E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		E53C912224C88B020068F2FD /* Henri Potier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henri Potier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53C912524C88B020068F2FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E53C912924C88B020068F2FD /* BookStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		E53C916124C89F330068F2FD /* BookCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellView.swift; sourceTree = "<group>"; };
 		E53C916324C8A6830068F2FD /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E53C916524C8A69D0068F2FD /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
-		E53C916724C8A7570068F2FD /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
 		E57DB3FD24C9D82C0092598D /* BookStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewModel.swift; sourceTree = "<group>"; };
 		E57DB3FF24C9D83C0092598D /* BookStoreViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewModeling.swift; sourceTree = "<group>"; };
 		E57DB40124C9DAC90092598D /* DependenciesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesManager.swift; sourceTree = "<group>"; };
@@ -192,7 +194,8 @@
 			children = (
 				E53C916324C8A6830068F2FD /* Book.swift */,
 				E53C916524C8A69D0068F2FD /* Offer.swift */,
-				E53C916724C8A7570068F2FD /* BookStore.swift */,
+				E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */,
+				E52F0BA824CA2C610009A793 /* BookService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,10 +432,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52F0BAB24CA47F50009A793 /* NetworkLayer.swift in Sources */,
 				E57DB40524C9E32F0092598D /* BookViewModeling.swift in Sources */,
 				E57DB40024C9D83C0092598D /* BookStoreViewModeling.swift in Sources */,
 				E53C916424C8A6830068F2FD /* Book.swift in Sources */,
 				E57DB40224C9DAC90092598D /* DependenciesManager.swift in Sources */,
+				E52F0BA924CA2C610009A793 /* BookService.swift in Sources */,
 				E53C915C24C89DCE0068F2FD /* StoryboardSegues.swift in Sources */,
 				E57DB40824C9E3410092598D /* BookViewModel.swift in Sources */,
 				E53C912A24C88B020068F2FD /* BookStoreViewController.swift in Sources */,
@@ -443,7 +448,6 @@
 				E57DB3FE24C9D82C0092598D /* BookStoreViewModel.swift in Sources */,
 				E52F0BA124C9F9530009A793 /* SelectedBookViewController.swift in Sources */,
 				E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */,
-				E53C916824C8A7570068F2FD /* BookStore.swift in Sources */,
 				E53C915F24C89DCE0068F2FD /* StoryboardScenes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
