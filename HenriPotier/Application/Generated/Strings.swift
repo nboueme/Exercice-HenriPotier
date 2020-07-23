@@ -21,6 +21,13 @@ internal enum L10n {
     /// No books are currently on sale. :(
     internal static let hasNotElements = L10n.tr("Localizable", "bookStore.hasNotElements")
   }
+
+  internal enum SelectedBook {
+    /// %d€
+    internal static func price(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "selectedBook.price", p1)
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

@@ -9,5 +9,8 @@
 // Application
 "app.name" = "Henri Potier";
 
-// BookStoreViewControler
+// BookStoreViewController
 "bookStore.hasNotElements" = "No books are currently on sale. :(";
+
+// SelectedBookViewController
+"selectedBook.price" = "%d€";

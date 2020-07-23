@@ -11,14 +11,24 @@ import DZNEmptyDataSet
 import SDWebImage
 
 final class BookStoreViewController: UIViewController {
-
     @IBOutlet weak var booksTableView: UITableView!
     
-    private var bookStoreDataSource = BookStore.bookStoreDataSource
+    var viewModel: BookStoreViewModeling?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        configureDataSource()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedBookVC = segue.destination as? SelectedBookViewController else { return }
+        guard let indexPath = booksTableView.indexPathForSelectedRow else { return }
+        guard let book = viewModel?.booksCells.value[indexPath.row] else { return }
+        
+        selectedBookVC.viewModel = DependenciesManager.shared.container.resolve(
+            BookViewModeling.self,
+            arguments: book.isbn.value, book.title.value, book.price.value, book.cover.value, book.synopsis.value)
     }
 }
 
@@ -29,24 +39,21 @@ extension BookStoreViewController {
         booksTableView.emptyDataSetSource = self
         booksTableView.tableFooterView = UIView()
     }
+    
+    private func configureDataSource() {
+        viewModel?.getBooksCells()
+    }
 }
 
 extension BookStoreViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookStoreDataSource.count
+        return viewModel?.booksCells.value.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.identifier, for: indexPath) as! BookTableViewCell
-        let book = bookStoreDataSource[indexPath.row]
-        
-        if let coverURL = book.cover {
-            cell.cover.sd_setImage(with: URL(string: coverURL), placeholderImage: Asset.placeholder.image)
-        }
-        
-        cell.title.text = book.title
-        cell.synopsis.text = book.synopsis?.joined(separator: "\n\n")
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: BookCellView.identifier, for: indexPath) as! BookCellView
+        cell.indexPath = indexPath
+        cell.viewModel = viewModel?.booksCells.value[indexPath.row]
         return cell
     }
 }

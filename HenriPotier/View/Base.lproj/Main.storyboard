@@ -39,15 +39,15 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookTableViewCell" id="DEy-TN-kUE" customClass="BookTableViewCell" customModule="Henri_Potier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="169.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookTableViewCell" id="DEy-TN-kUE" customClass="BookCellView" customModule="Henri_Potier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="181.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DEy-TN-kUE" id="X7G-sJ-OwY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pi6-Ne-wp0" userLabel="Book View">
-                                                    <rect key="frame" x="25" y="21" width="325" height="127.5"/>
+                                                    <rect key="frame" x="25" y="21" width="325" height="139.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="d4Q-1Y-okH">
                                                             <rect key="frame" x="0.0" y="0.0" width="81.5" height="81.5"/>
@@ -56,7 +56,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPu-aq-PjI" userLabel="Description View">
-                                                            <rect key="frame" x="97.5" y="0.0" width="227.5" height="127.5"/>
+                                                            <rect key="frame" x="97.5" y="0.0" width="227.5" height="139.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henri Potier à l'école des sorciers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67o-0X-1kR">
                                                                     <rect key="frame" x="0.0" y="0.0" width="227.5" height="42.5"/>
@@ -64,8 +64,14 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35€" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hl-Fz-2B2">
+                                                                    <rect key="frame" x="0.0" y="42.5" width="227.5" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-UA-EUR">
-                                                                    <rect key="frame" x="0.0" y="42.5" width="227.5" height="65.5"/>
+                                                                    <rect key="frame" x="0.0" y="64.5" width="227.5" height="65.5"/>
                                                                     <string key="text">Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily) et son oncle Vernon à l'âge d'un an. Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir.</string>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                     <nil key="textColor"/>
@@ -74,12 +80,15 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="67o-0X-1kR" secondAttribute="trailing" id="1cZ-dM-zhB"/>
+                                                                <constraint firstItem="5Hl-Fz-2B2" firstAttribute="top" secondItem="67o-0X-1kR" secondAttribute="bottom" id="8Kg-82-KKw"/>
                                                                 <constraint firstItem="67o-0X-1kR" firstAttribute="leading" secondItem="OPu-aq-PjI" secondAttribute="leading" id="SrY-wX-WZe"/>
                                                                 <constraint firstItem="1M5-UA-EUR" firstAttribute="leading" secondItem="OPu-aq-PjI" secondAttribute="leading" id="aA0-GL-3Dj"/>
                                                                 <constraint firstAttribute="trailing" secondItem="1M5-UA-EUR" secondAttribute="trailing" id="b3C-eS-eGY"/>
+                                                                <constraint firstItem="1M5-UA-EUR" firstAttribute="top" secondItem="5Hl-Fz-2B2" secondAttribute="bottom" constant="4" id="gTW-WQ-nLu"/>
                                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1M5-UA-EUR" secondAttribute="bottom" id="hH7-OE-u9k"/>
+                                                                <constraint firstItem="5Hl-Fz-2B2" firstAttribute="leading" secondItem="OPu-aq-PjI" secondAttribute="leading" id="lao-p1-b6P"/>
                                                                 <constraint firstItem="67o-0X-1kR" firstAttribute="top" secondItem="OPu-aq-PjI" secondAttribute="top" id="qmd-vY-6bo"/>
-                                                                <constraint firstItem="1M5-UA-EUR" firstAttribute="top" secondItem="67o-0X-1kR" secondAttribute="bottom" id="rDB-B7-4Fv"/>
+                                                                <constraint firstAttribute="trailing" secondItem="5Hl-Fz-2B2" secondAttribute="trailing" id="sDl-hq-X0p"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -99,8 +108,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cover" destination="d4Q-1Y-okH" id="dBK-Zi-ifl"/>
+                                            <outlet property="price" destination="5Hl-Fz-2B2" id="1K7-7K-pmg"/>
                                             <outlet property="synopsis" destination="1M5-UA-EUR" id="5af-8I-yUc"/>
                                             <outlet property="title" destination="67o-0X-1kR" id="Oyf-y5-T8u"/>
+                                            <segue destination="Ddg-HB-w6P" kind="show" id="L0d-aU-tTt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -128,7 +139,98 @@
             </objects>
             <point key="canvasLocation" x="132" y="138.98050974512745"/>
         </scene>
+        <!--Selected Book View Controller-->
+        <scene sceneID="vim-NR-ezA">
+            <objects>
+                <viewController id="Ddg-HB-w6P" customClass="SelectedBookViewController" customModule="Henri_Potier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Xg-F2-jKo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkf-ed-AoB">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54r-wD-rup" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="637.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="QQw-30-JY5">
+                                                <rect key="frame" x="94" y="20" width="187.5" height="187.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="QQw-30-JY5" secondAttribute="height" id="Xnb-XH-kug"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henri Potier à l'école des sorciers" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uth-5L-Nez">
+                                                <rect key="frame" x="20" y="227.5" width="335" height="67.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35€" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B93-dZ-FBY">
+                                                <rect key="frame" x="20" y="295" width="335" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-v7-Aiz">
+                                                <rect key="frame" x="20" y="333" width="335" height="284.5"/>
+                                                <mutableString key="text">Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily) et son oncle Vernon à l'âge d'un an. Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir. Henri ignore tout de l'histoire de ses parents, si ce n'est qu'ils ont été tués dans un accident de voiture.</mutableString>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="B93-dZ-FBY" firstAttribute="top" secondItem="Uth-5L-Nez" secondAttribute="bottom" id="7IA-iQ-rZy"/>
+                                            <constraint firstItem="F1w-v7-Aiz" firstAttribute="top" secondItem="B93-dZ-FBY" secondAttribute="bottom" constant="20" id="HUt-Up-2fM"/>
+                                            <constraint firstAttribute="trailing" secondItem="B93-dZ-FBY" secondAttribute="trailing" constant="20" id="KW2-kr-tSx"/>
+                                            <constraint firstItem="QQw-30-JY5" firstAttribute="top" secondItem="54r-wD-rup" secondAttribute="top" constant="20" id="ZLi-Ew-9en"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uth-5L-Nez" secondAttribute="trailing" constant="20" id="cwd-gh-hhI"/>
+                                            <constraint firstItem="Uth-5L-Nez" firstAttribute="top" secondItem="QQw-30-JY5" secondAttribute="bottom" constant="20" id="dTR-rN-EU8"/>
+                                            <constraint firstAttribute="trailing" secondItem="F1w-v7-Aiz" secondAttribute="trailing" constant="20" id="f0A-hU-64f"/>
+                                            <constraint firstItem="QQw-30-JY5" firstAttribute="centerX" secondItem="54r-wD-rup" secondAttribute="centerX" id="hic-8E-g6J"/>
+                                            <constraint firstAttribute="bottom" secondItem="F1w-v7-Aiz" secondAttribute="bottom" constant="20" id="sFA-ga-1X2"/>
+                                            <constraint firstItem="B93-dZ-FBY" firstAttribute="leading" secondItem="54r-wD-rup" secondAttribute="leading" constant="20" id="sgh-QX-nha"/>
+                                            <constraint firstItem="F1w-v7-Aiz" firstAttribute="leading" secondItem="54r-wD-rup" secondAttribute="leading" constant="20" id="syI-Hx-VPs"/>
+                                            <constraint firstItem="Uth-5L-Nez" firstAttribute="leading" secondItem="54r-wD-rup" secondAttribute="leading" constant="20" id="uNX-eC-flJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="54r-wD-rup" firstAttribute="leading" secondItem="s7k-KW-dMc" secondAttribute="leading" id="Abe-5t-Bpa"/>
+                                    <constraint firstItem="54r-wD-rup" firstAttribute="width" secondItem="TJg-v7-GLb" secondAttribute="width" id="MPf-rI-laj"/>
+                                    <constraint firstItem="54r-wD-rup" firstAttribute="trailing" secondItem="s7k-KW-dMc" secondAttribute="trailing" id="N3c-u3-2O9"/>
+                                    <constraint firstItem="54r-wD-rup" firstAttribute="bottom" secondItem="s7k-KW-dMc" secondAttribute="bottom" id="WwX-J2-GmY"/>
+                                    <constraint firstItem="QQw-30-JY5" firstAttribute="width" secondItem="zkf-ed-AoB" secondAttribute="width" multiplier="0.5" id="jtk-z4-dLl"/>
+                                    <constraint firstItem="54r-wD-rup" firstAttribute="top" secondItem="s7k-KW-dMc" secondAttribute="top" id="vAt-aa-WHV"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="s7k-KW-dMc"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="TJg-v7-GLb"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zkf-ed-AoB" firstAttribute="leading" secondItem="ELd-fN-yj5" secondAttribute="leading" id="0bi-v4-e0Q"/>
+                            <constraint firstItem="zkf-ed-AoB" firstAttribute="trailing" secondItem="ELd-fN-yj5" secondAttribute="trailing" id="4Xx-fm-k7h"/>
+                            <constraint firstItem="zkf-ed-AoB" firstAttribute="bottom" secondItem="ELd-fN-yj5" secondAttribute="bottom" id="Yqk-qJ-b9f"/>
+                            <constraint firstItem="zkf-ed-AoB" firstAttribute="top" secondItem="ELd-fN-yj5" secondAttribute="top" id="z3s-92-Vcp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ELd-fN-yj5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FhW-Dr-eBb"/>
+                    <connections>
+                        <outlet property="cover" destination="QQw-30-JY5" id="YlR-mQ-hjk"/>
+                        <outlet property="name" destination="Uth-5L-Nez" id="Dq4-7u-xTB"/>
+                        <outlet property="price" destination="B93-dZ-FBY" id="z7L-ht-HK6"/>
+                        <outlet property="synopsis" destination="F1w-v7-Aiz" id="MXw-uR-IGH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3HN-PF-5D1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="138.98050974512745"/>
+        </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="placeholder" width="210" height="210"/>

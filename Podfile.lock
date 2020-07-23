@@ -1,9 +1,11 @@
 PODS:
   - Alamofire (5.2.2)
   - DZNEmptyDataSet (1.8.1)
-  - ReactorKit (2.1.0):
-    - RxSwift (~> 5.0)
-    - WeakMapTable (~> 1.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SDWebImage (5.8.4):
     - SDWebImage/Core (= 5.8.4)
@@ -11,12 +13,12 @@ PODS:
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.7.1)
-  - WeakMapTable (1.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - DZNEmptyDataSet
-  - ReactorKit
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
   - SDWebImage (~> 5.0)
   - Swinject
   - SwinjectStoryboard (from `https://github.com/Swinject/SwinjectStoryboard.git`, commit `0ca45c83a8aa398c153d8a036c95abb4343cfa0c`)
@@ -25,11 +27,11 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - DZNEmptyDataSet
-    - ReactorKit
+    - RxCocoa
+    - RxRelay
     - RxSwift
     - SDWebImage
     - Swinject
-    - WeakMapTable
 
 EXTERNAL SOURCES:
   SwinjectStoryboard:
@@ -44,13 +46,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  ReactorKit: 12a93358c554bb3f167b16b14c40374fa9cd5acd
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: f0d5b1c16459949d6ff1cbb6610107946b18e1f8
-  WeakMapTable: d0327eda092be6a8f7c532942ae98dc7948f5d32
 
-PODFILE CHECKSUM: 5a9ef0d5f9935c78c814262e1733913aaa91bbcd
+PODFILE CHECKSUM: b360f31cac68de6286cf632c77de66e727db266b
 
 COCOAPODS: 1.8.3
