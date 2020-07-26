@@ -1,20 +1,18 @@
 //
-//  BookCellViewModeling.swift
+//  BookLineViewModeling.swift
 //  HenriPotier
 //
-//  Created by Nicolas Bouème on 23/07/2020.
+//  Created by Nicolas Bouème on 26/07/2020.
 //  Copyright © 2020 Nicolas Bouème. All rights reserved.
 //
 
 import RxCocoa
 
-protocol BookViewModeling {
+protocol BasketLineViewModeling {
     var isbn: BehaviorRelay<String> { get }
+    var quantity: BehaviorRelay<String> { get }
     var title: BehaviorRelay<String> { get }
     var price: BehaviorRelay<String> { get }
     var cover: BehaviorRelay<Data?> { get }
-    var synopsis: BehaviorRelay<String?> { get }
-    
-    init(with book: Book)
-    init(isbn: String)
+    init(with line: BasketLine)
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2020 Nicolas Bouème. All rights reserved.
 //
 
-import Foundation
-
 struct Offer: Decodable {
     var type: String
     var value: Int

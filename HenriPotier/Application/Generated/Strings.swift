@@ -17,9 +17,25 @@ internal enum L10n {
     internal static let name = L10n.tr("Localizable", "app.name")
   }
 
+  internal enum Basket {
+    /// Your basket is currently empty!
+    internal static let hasNotElements = L10n.tr("Localizable", "basket.hasNotElements")
+    internal enum Cell {
+      /// Quantity: %d
+      internal static func quantity(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "basket.cell.quantity", p1)
+      }
+    }
+  }
+
   internal enum BookStore {
     /// No books are currently on sale. :(
     internal static let hasNotElements = L10n.tr("Localizable", "bookStore.hasNotElements")
+  }
+
+  internal enum Button {
+    /// Add to basket
+    internal static let addToBasket = L10n.tr("Localizable", "button.addToBasket")
   }
 
   internal enum SelectedBook {

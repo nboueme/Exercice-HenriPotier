@@ -8,13 +8,14 @@
 
 import UIKit
 import DZNEmptyDataSet
-import SDWebImage
 import RxSwift
 
 final class BookStoreViewController: UIViewController {
     @IBOutlet weak var booksTableView: UITableView!
+    @IBOutlet weak var basket: UIBarButtonItem!
     
-    var viewModel: BookStoreViewModeling?
+    var bookStoreViewModel: BookStoreViewModeling?
+    var basketViewModel: BasketViewModeling?
     
     private let disposeBag = DisposeBag()
     
@@ -22,17 +23,19 @@ final class BookStoreViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         configureDataSource()
+        basketState()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedBookVC = segue.destination as? SelectedBookViewController else { return }
         guard let indexPath = booksTableView.indexPathForSelectedRow else { return }
-        guard let book = viewModel?.booksCells.value[indexPath.row] else { return }
+        guard let book = bookStoreViewModel?.booksCells.value[indexPath.row] else { return }
         
-        selectedBookVC.viewModel = DependenciesManager.shared.container.resolve(
-            BookViewModeling.self,
-            name: "cell",
-            arguments: book.isbn.value, book.title.value, book.price.value, book.cover.value, book.synopsis.value)
+        selectedBookVC.bookViewModel = DependenciesManager
+            .shared
+            .container
+            .resolve(BookViewModeling.self, name: "isbn", argument: book.isbn.value)
+        selectedBookVC.basketViewModel = basketViewModel
     }
 }
 
@@ -45,23 +48,33 @@ extension BookStoreViewController {
     }
     
     private func configureDataSource() {
-        viewModel?.getBooksCells()
+        bookStoreViewModel?.getBooksCells()
         
-        viewModel?.booksCells.asObservable().subscribe { [weak self] _ in
+        bookStoreViewModel?.booksCells.asObservable().subscribe { [weak self] _ in
             self?.booksTableView.reloadData()
+        }.disposed(by: disposeBag)
+    }
+    
+    private func basketState() {
+        guard let basketVM = basketViewModel else { return }
+        
+        basketVM.basketIconName.asObservable().subscribe { [weak self] iconName in
+            guard let iconName = iconName.element else { return }
+            guard let strongSelf = self else { return }
+            strongSelf.basket.image = UIImage(systemName: iconName)
         }.disposed(by: disposeBag)
     }
 }
 
 extension BookStoreViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.booksCells.value.count ?? 0
+        return bookStoreViewModel?.booksCells.value.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BookCellView.identifier, for: indexPath) as! BookCellView
         cell.indexPath = indexPath
-        cell.viewModel = viewModel?.booksCells.value[indexPath.row]
+        cell.viewModel = bookStoreViewModel?.booksCells.value[indexPath.row]
         return cell
     }
 }

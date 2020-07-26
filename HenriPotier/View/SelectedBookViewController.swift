@@ -8,41 +8,60 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
-class SelectedBookViewController: UIViewController {
-    
+final class SelectedBookViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var synopsis: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var cover: UIImageView!
+    @IBOutlet weak var basket: UIBarButtonItem!
+    @IBOutlet weak var addToBasket: UIBarButtonItem!
     
     private let disposeBag = DisposeBag()
     
-    var viewModel: BookViewModeling?
+    var bookViewModel: BookViewModeling?
+    var basketViewModel: BasketViewModeling?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeUI()
+        basketState()
+    }
+    
+    @IBAction func didTapOnAddToBasketButton(_ sender: Any) {
+        guard let bookVM = bookViewModel else { return }
+        basketViewModel?.addBasketLine(for: 0, isbn: bookVM.isbn.value)
     }
 }
 
 extension SelectedBookViewController {
     private func initializeUI() {
-        viewModel?.title.bind(to: name.rx.text).disposed(by: disposeBag)
-        viewModel?.synopsis.bind(to: synopsis.rx.text).disposed(by: disposeBag)
+        addToBasket.title = L10n.Button.addToBasket
         
-        viewModel?.price.asObservable().subscribe { [weak self] price in
+        bookViewModel?.title.bind(to: name.rx.text).disposed(by: disposeBag)
+        bookViewModel?.synopsis.bind(to: synopsis.rx.text).disposed(by: disposeBag)
+        bookViewModel?.price.bind(to: price.rx.text).disposed(by: disposeBag)
+        
+        bookViewModel?.cover.asObservable().subscribe { [weak self] data in
             guard let strongSelf = self else { return }
-            guard let price = price.element else { return }
+            guard let data = data.element, let image = data else { return }
             
-            strongSelf.price.text = L10n.SelectedBook.price(Int(price))
+            strongSelf.cover.image = UIImage(data: image)
         }.disposed(by: disposeBag)
+    }
+    
+    private func basketState() {
+        guard let bookVM = bookViewModel else { return }
+        guard let basketVM = basketViewModel else { return }
         
-        viewModel?.cover.asObservable().subscribe { [weak self] url in
+        basketVM.searchBasketLine(for: bookVM.isbn.value)
+        basketVM.bookIsNotAlreadyInBasket.asObservable().bind(to: addToBasket.rx.isEnabled).disposed(by: disposeBag)
+        
+        basketVM.basketIconName.asObservable().subscribe { [weak self] iconName in
+            guard let iconName = iconName.element else { return }
             guard let strongSelf = self else { return }
-            guard let url = url.element else { return }
-            
-            strongSelf.cover.sd_setImage(with: url, placeholderImage: Asset.placeholder.image)
+            strongSelf.basket.image = UIImage(systemName: iconName)
         }.disposed(by: disposeBag)
     }
 }

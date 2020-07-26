@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Basket" representedClassName="Basket" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="line" toMany="YES" deletionRule="Cascade" destinationEntity="BasketLine" inverseName="basket" inverseEntity="BasketLine"/>
+    </entity>
+    <entity name="BasketLine" representedClassName="BasketLine" syncable="YES" codeGenerationType="class">
+        <attribute name="isbn" attributeType="String"/>
+        <attribute name="quantity" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <relationship name="basket" maxCount="1" deletionRule="Nullify" destinationEntity="Basket" inverseName="line" inverseEntity="Basket"/>
+    </entity>
+    <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
+        <attribute name="cover" optional="YES" attributeType="Binary"/>
+        <attribute name="isbn" attributeType="String"/>
+        <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="synopsis" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Basket" positionX="-275.43359375" positionY="-107.46875" width="128" height="73"/>
+        <element name="Book" positionX="-451.0625" positionY="-30.4296875" width="128" height="118"/>
+        <element name="BasketLine" positionX="-133.875" positionY="17.1171875" width="128" height="88"/>
+    </elements>
+</model>

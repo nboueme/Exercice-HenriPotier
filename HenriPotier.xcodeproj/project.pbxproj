@@ -11,6 +11,10 @@
 		E52F0BA124C9F9530009A793 /* SelectedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */; };
 		E52F0BA924CA2C610009A793 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BA824CA2C610009A793 /* BookService.swift */; };
 		E52F0BAB24CA47F50009A793 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */; };
+		E52F0BAD24CB0AFE0009A793 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BAC24CB0AFE0009A793 /* CoreDataManager.swift */; };
+		E52F0BB024CB0B450009A793 /* HenriPotier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BAE24CB0B450009A793 /* HenriPotier.xcdatamodeld */; };
+		E52F0BB224CB0E7B0009A793 /* BasketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BB124CB0E7B0009A793 /* BasketEntity.swift */; };
+		E52F0BB424CB105D0009A793 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BB324CB105D0009A793 /* BasketViewController.swift */; };
 		E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912524C88B020068F2FD /* AppDelegate.swift */; };
 		E53C912A24C88B020068F2FD /* BookStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C912924C88B020068F2FD /* BookStoreViewController.swift */; };
 		E53C912D24C88B020068F2FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53C912B24C88B020068F2FD /* Main.storyboard */; };
@@ -25,8 +29,13 @@
 		E53C915E24C89DCE0068F2FD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C915A24C89DCE0068F2FD /* Strings.swift */; };
 		E53C915F24C89DCE0068F2FD /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C915B24C89DCE0068F2FD /* StoryboardScenes.swift */; };
 		E53C916224C89F330068F2FD /* BookCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916124C89F330068F2FD /* BookCellView.swift */; };
-		E53C916424C8A6830068F2FD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916324C8A6830068F2FD /* Book.swift */; };
+		E53C916424C8A6830068F2FD /* BookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916324C8A6830068F2FD /* BookEntity.swift */; };
 		E53C916624C8A69D0068F2FD /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C916524C8A69D0068F2FD /* Offer.swift */; };
+		E5419D1B24CB312D00A4FE80 /* BasketViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5419D1A24CB312D00A4FE80 /* BasketViewModeling.swift */; };
+		E5419D1D24CB314700A4FE80 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5419D1C24CB314700A4FE80 /* BasketViewModel.swift */; };
+		E56A03DB24CDD748004407C2 /* BasketLineCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A03DA24CDD748004407C2 /* BasketLineCellView.swift */; };
+		E56A03DD24CDD8FA004407C2 /* BasketLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A03DC24CDD8FA004407C2 /* BasketLineViewModel.swift */; };
+		E56A03DF24CDDAC8004407C2 /* BasketLineViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A03DE24CDDAC8004407C2 /* BasketLineViewModeling.swift */; };
 		E57DB3FE24C9D82C0092598D /* BookStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB3FD24C9D82C0092598D /* BookStoreViewModel.swift */; };
 		E57DB40024C9D83C0092598D /* BookStoreViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB3FF24C9D83C0092598D /* BookStoreViewModeling.swift */; };
 		E57DB40224C9DAC90092598D /* DependenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40124C9DAC90092598D /* DependenciesManager.swift */; };
@@ -51,6 +60,10 @@
 		E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBookViewController.swift; sourceTree = "<group>"; };
 		E52F0BA824CA2C610009A793 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		E52F0BAC24CB0AFE0009A793 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E52F0BAF24CB0B450009A793 /* HenriPotier.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HenriPotier.xcdatamodel; sourceTree = "<group>"; };
+		E52F0BB124CB0E7B0009A793 /* BasketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketEntity.swift; sourceTree = "<group>"; };
+		E52F0BB324CB105D0009A793 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		E53C912224C88B020068F2FD /* Henri Potier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henri Potier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53C912524C88B020068F2FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E53C912924C88B020068F2FD /* BookStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewController.swift; sourceTree = "<group>"; };
@@ -69,8 +82,13 @@
 		E53C915A24C89DCE0068F2FD /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		E53C915B24C89DCE0068F2FD /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
 		E53C916124C89F330068F2FD /* BookCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellView.swift; sourceTree = "<group>"; };
-		E53C916324C8A6830068F2FD /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		E53C916324C8A6830068F2FD /* BookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntity.swift; sourceTree = "<group>"; };
 		E53C916524C8A69D0068F2FD /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		E5419D1A24CB312D00A4FE80 /* BasketViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModeling.swift; sourceTree = "<group>"; };
+		E5419D1C24CB314700A4FE80 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
+		E56A03DA24CDD748004407C2 /* BasketLineCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketLineCellView.swift; sourceTree = "<group>"; };
+		E56A03DC24CDD8FA004407C2 /* BasketLineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketLineViewModel.swift; sourceTree = "<group>"; };
+		E56A03DE24CDDAC8004407C2 /* BasketLineViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketLineViewModeling.swift; sourceTree = "<group>"; };
 		E57DB3FD24C9D82C0092598D /* BookStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewModel.swift; sourceTree = "<group>"; };
 		E57DB3FF24C9D83C0092598D /* BookStoreViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewModeling.swift; sourceTree = "<group>"; };
 		E57DB40124C9DAC90092598D /* DependenciesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesManager.swift; sourceTree = "<group>"; };
@@ -163,6 +181,7 @@
 				E53C914924C8930B0068F2FD /* Resources */,
 				E53C915224C89C8F0068F2FD /* Generated */,
 				E53C913024C88B080068F2FD /* LaunchScreen.storyboard */,
+				E52F0BAC24CB0AFE0009A793 /* CoreDataManager.swift */,
 				E57DB40124C9DAC90092598D /* DependenciesManager.swift */,
 				E53C912524C88B020068F2FD /* AppDelegate.swift */,
 			);
@@ -176,6 +195,7 @@
 				E53C912B24C88B020068F2FD /* Main.storyboard */,
 				E53C912924C88B020068F2FD /* BookStoreViewController.swift */,
 				E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */,
+				E52F0BB324CB105D0009A793 /* BasketViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,10 +212,12 @@
 		E53C914A24C893190068F2FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E53C916324C8A6830068F2FD /* Book.swift */,
+				E53C916324C8A6830068F2FD /* BookEntity.swift */,
+				E52F0BB124CB0E7B0009A793 /* BasketEntity.swift */,
 				E53C916524C8A69D0068F2FD /* Offer.swift */,
 				E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */,
 				E52F0BA824CA2C610009A793 /* BookService.swift */,
+				E52F0BAE24CB0B450009A793 /* HenriPotier.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				E53C916124C89F330068F2FD /* BookCellView.swift */,
+				E56A03DA24CDD748004407C2 /* BasketLineCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -233,6 +256,8 @@
 			children = (
 				E57DB40424C9E32F0092598D /* BookViewModeling.swift */,
 				E57DB3FF24C9D83C0092598D /* BookStoreViewModeling.swift */,
+				E5419D1A24CB312D00A4FE80 /* BasketViewModeling.swift */,
+				E56A03DE24CDDAC8004407C2 /* BasketLineViewModeling.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -242,6 +267,8 @@
 			children = (
 				E57DB40724C9E3410092598D /* BookViewModel.swift */,
 				E57DB3FD24C9D82C0092598D /* BookStoreViewModel.swift */,
+				E5419D1C24CB314700A4FE80 /* BasketViewModel.swift */,
+				E56A03DC24CDD8FA004407C2 /* BasketLineViewModel.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -432,20 +459,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52F0BB224CB0E7B0009A793 /* BasketEntity.swift in Sources */,
 				E52F0BAB24CA47F50009A793 /* NetworkLayer.swift in Sources */,
+				E56A03DD24CDD8FA004407C2 /* BasketLineViewModel.swift in Sources */,
 				E57DB40524C9E32F0092598D /* BookViewModeling.swift in Sources */,
+				E56A03DF24CDDAC8004407C2 /* BasketLineViewModeling.swift in Sources */,
 				E57DB40024C9D83C0092598D /* BookStoreViewModeling.swift in Sources */,
-				E53C916424C8A6830068F2FD /* Book.swift in Sources */,
+				E53C916424C8A6830068F2FD /* BookEntity.swift in Sources */,
+				E5419D1B24CB312D00A4FE80 /* BasketViewModeling.swift in Sources */,
 				E57DB40224C9DAC90092598D /* DependenciesManager.swift in Sources */,
+				E56A03DB24CDD748004407C2 /* BasketLineCellView.swift in Sources */,
 				E52F0BA924CA2C610009A793 /* BookService.swift in Sources */,
+				E52F0BAD24CB0AFE0009A793 /* CoreDataManager.swift in Sources */,
 				E53C915C24C89DCE0068F2FD /* StoryboardSegues.swift in Sources */,
+				E52F0BB424CB105D0009A793 /* BasketViewController.swift in Sources */,
 				E57DB40824C9E3410092598D /* BookViewModel.swift in Sources */,
+				E52F0BB024CB0B450009A793 /* HenriPotier.xcdatamodeld in Sources */,
 				E53C912A24C88B020068F2FD /* BookStoreViewController.swift in Sources */,
 				E53C915E24C89DCE0068F2FD /* Strings.swift in Sources */,
 				E53C916224C89F330068F2FD /* BookCellView.swift in Sources */,
 				E53C915D24C89DCE0068F2FD /* Assets.swift in Sources */,
 				E53C916624C8A69D0068F2FD /* Offer.swift in Sources */,
 				E57DB3FE24C9D82C0092598D /* BookStoreViewModel.swift in Sources */,
+				E5419D1D24CB314700A4FE80 /* BasketViewModel.swift in Sources */,
 				E52F0BA124C9F9530009A793 /* SelectedBookViewController.swift in Sources */,
 				E53C912624C88B020068F2FD /* AppDelegate.swift in Sources */,
 				E53C915F24C89DCE0068F2FD /* StoryboardScenes.swift in Sources */,
@@ -727,6 +763,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E52F0BAE24CB0B450009A793 /* HenriPotier.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E52F0BAF24CB0B450009A793 /* HenriPotier.xcdatamodel */,
+			);
+			currentVersion = E52F0BAF24CB0B450009A793 /* HenriPotier.xcdatamodel */;
+			path = HenriPotier.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E53C911A24C88B020068F2FD /* Project object */;
 }

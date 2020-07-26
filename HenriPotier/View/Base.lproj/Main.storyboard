@@ -40,14 +40,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookTableViewCell" id="DEy-TN-kUE" customClass="BookCellView" customModule="Henri_Potier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="181.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="182.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DEy-TN-kUE" id="X7G-sJ-OwY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="182.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pi6-Ne-wp0" userLabel="Book View">
-                                                    <rect key="frame" x="25" y="21" width="325" height="139.5"/>
+                                                    <rect key="frame" x="25" y="21" width="325" height="140.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="d4Q-1Y-okH">
                                                             <rect key="frame" x="0.0" y="0.0" width="81.5" height="81.5"/>
@@ -56,7 +56,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPu-aq-PjI" userLabel="Description View">
-                                                            <rect key="frame" x="97.5" y="0.0" width="227.5" height="139.5"/>
+                                                            <rect key="frame" x="97.5" y="0.0" width="227.5" height="140.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henri Potier à l'école des sorciers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67o-0X-1kR">
                                                                     <rect key="frame" x="0.0" y="0.0" width="227.5" height="42.5"/>
@@ -129,9 +129,13 @@
                     <navigationItem key="navigationItem" title="Books" id="ezV-fC-fMc">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="archivebox" catalog="system" id="NQM-s5-sTj">
                             <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="blm-ey-A9J" kind="showDetail" id="hlU-nl-znu"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="basket" destination="NQM-s5-sTj" id="cQB-aq-pr4"/>
                         <outlet property="booksTableView" destination="XA7-OG-6tu" id="rHT-PJ-MWo"/>
                     </connections>
                 </viewController>
@@ -173,7 +177,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-v7-Aiz">
                                                 <rect key="frame" x="20" y="333" width="335" height="284.5"/>
-                                                <mutableString key="text">Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily) et son oncle Vernon à l'âge d'un an. Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir. Henri ignore tout de l'histoire de ses parents, si ce n'est qu'ils ont été tués dans un accident de voiture.</mutableString>
+                                                <string key="text">Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily) et son oncle Vernon à l'âge d'un an. Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir. Henri ignore tout de l'histoire de ses parents, si ce n'est qu'ils ont été tués dans un accident de voiture.</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -217,8 +221,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ELd-fN-yj5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FhW-Dr-eBb"/>
+                    <navigationItem key="navigationItem" id="FhW-Dr-eBb">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="archivebox" catalog="system" id="tbk-zy-szY">
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="blm-ey-A9J" kind="showDetail" id="KXo-Z6-pR0"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Add to basket" id="bxn-Sz-fRo">
+                                <connections>
+                                    <action selector="didTapOnAddToBasketButton:" destination="Ddg-HB-w6P" id="w5g-9s-my6"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addToBasket" destination="bxn-Sz-fRo" id="VaQ-l9-KZF"/>
+                        <outlet property="basket" destination="tbk-zy-szY" id="bSc-1J-UXu"/>
                         <outlet property="cover" destination="QQw-30-JY5" id="YlR-mQ-hjk"/>
                         <outlet property="name" destination="Uth-5L-Nez" id="Dq4-7u-xTB"/>
                         <outlet property="price" destination="B93-dZ-FBY" id="z7L-ht-HK6"/>
@@ -229,7 +249,144 @@
             </objects>
             <point key="canvasLocation" x="1016.8" y="138.98050974512745"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uYK-y5-7gP">
+            <objects>
+                <navigationController id="blm-ey-A9J" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w9C-0L-JGI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="P1F-B5-wTT" kind="relationship" relationship="rootViewController" id="6am-s4-4cz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vew-X2-0fo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="911"/>
+        </scene>
+        <!--Basket-->
+        <scene sceneID="iEQ-Rd-jbA">
+            <objects>
+                <viewController id="P1F-B5-wTT" customClass="BasketViewController" customModule="Henri_Potier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uAD-Kl-a0N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wmW-4d-6OR">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasketLineTableViewCell" id="XWb-6j-1jQ" customClass="BasketLineCellView" customModule="Henri_Potier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="111"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XWb-6j-1jQ" id="9pw-ci-FJ4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="12F-YY-Q0r" userLabel="Line View">
+                                                    <rect key="frame" x="10" y="10" width="355" height="91"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jIW-Oc-2js">
+                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="jIW-Oc-2js" secondAttribute="height" multiplier="1:1" id="Ua1-it-wCb"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-Nx-D5T" userLabel="Description View">
+                                                            <rect key="frame" x="105" y="0.0" width="250" height="91"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henri Potier à l'école des sorciers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maM-1b-xfa">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="42.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Jrb-zh-d4O">
+                                                                    <rect key="frame" x="0.0" y="42.5" width="250" height="18"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35€" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOK-v2-NiE">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="125" height="18"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                            <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity: 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4it-Co-JuB">
+                                                                            <rect key="frame" x="125" y="0.0" width="125" height="18"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                            <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="maM-1b-xfa" firstAttribute="leading" secondItem="9fc-Nx-D5T" secondAttribute="leading" id="P3t-sq-ISW"/>
+                                                                <constraint firstItem="Jrb-zh-d4O" firstAttribute="top" secondItem="maM-1b-xfa" secondAttribute="bottom" id="PvU-N3-nSM"/>
+                                                                <constraint firstItem="maM-1b-xfa" firstAttribute="top" secondItem="9fc-Nx-D5T" secondAttribute="top" id="hDX-af-a2H"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Jrb-zh-d4O" secondAttribute="trailing" id="k41-Rv-xlH"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jrb-zh-d4O" secondAttribute="bottom" id="ly5-HR-exf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="maM-1b-xfa" secondAttribute="trailing" id="rQN-HM-T1K"/>
+                                                                <constraint firstItem="Jrb-zh-d4O" firstAttribute="leading" secondItem="9fc-Nx-D5T" secondAttribute="leading" id="ueA-aB-glW"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jIW-Oc-2js" secondAttribute="bottom" id="8dd-DB-K80"/>
+                                                        <constraint firstItem="jIW-Oc-2js" firstAttribute="width" secondItem="12F-YY-Q0r" secondAttribute="width" multiplier="1:4" id="Hib-tR-JMV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="9fc-Nx-D5T" secondAttribute="bottom" id="gRX-ID-Fsm"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="12F-YY-Q0r" firstAttribute="top" secondItem="9pw-ci-FJ4" secondAttribute="top" constant="10" id="9BD-oH-Lba"/>
+                                                <constraint firstAttribute="trailing" secondItem="12F-YY-Q0r" secondAttribute="trailing" constant="10" id="JPD-Hj-U78"/>
+                                                <constraint firstItem="12F-YY-Q0r" firstAttribute="leading" secondItem="9pw-ci-FJ4" secondAttribute="leading" constant="10" id="JeL-4W-woA"/>
+                                                <constraint firstAttribute="bottom" secondItem="12F-YY-Q0r" secondAttribute="bottom" constant="10" id="iLO-Vc-rdO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cover" destination="jIW-Oc-2js" id="ZdJ-Po-rgk"/>
+                                            <outlet property="price" destination="sOK-v2-NiE" id="yRP-Lp-wfM"/>
+                                            <outlet property="quantity" destination="4it-Co-JuB" id="cE8-6I-FF4"/>
+                                            <outlet property="title" destination="maM-1b-xfa" id="UMj-24-xOt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wmW-4d-6OR" firstAttribute="top" secondItem="98p-mk-JJY" secondAttribute="top" id="C4Q-qX-l4a"/>
+                            <constraint firstItem="98p-mk-JJY" firstAttribute="bottom" secondItem="wmW-4d-6OR" secondAttribute="bottom" id="NMU-Gx-g3L"/>
+                            <constraint firstItem="wmW-4d-6OR" firstAttribute="leading" secondItem="98p-mk-JJY" secondAttribute="leading" id="dxw-kL-ag6"/>
+                            <constraint firstItem="98p-mk-JJY" firstAttribute="trailing" secondItem="wmW-4d-6OR" secondAttribute="trailing" id="pna-az-pcW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="98p-mk-JJY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Basket" id="XXj-jm-GYV">
+                        <barButtonItem key="rightBarButtonItem" title="OK" style="done" id="tlo-ei-yMn">
+                            <connections>
+                                <action selector="didTapOnOKButton:" destination="P1F-B5-wTT" id="ewk-tM-jno"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="linesTableView" destination="wmW-4d-6OR" id="GSC-Aq-pCz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8K-Ug-UyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1463" y="911"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hlU-nl-znu"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>

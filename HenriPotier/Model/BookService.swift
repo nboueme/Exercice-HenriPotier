@@ -6,7 +6,7 @@
 //  Copyright © 2020 Nicolas Bouème. All rights reserved.
 //
 
-typealias FetchBooks = (Result<[Book], Error>) -> Void
+typealias FetchBooks = (Result<[BookEntity], Error>) -> Void
 typealias FetchOffers = (Result<Offers, Error>) -> Void
 
 final class BookService: NetworkLayer {
@@ -21,7 +21,7 @@ final class BookService: NetworkLayer {
 extension BookService {
     func fetchBooks(completion: @escaping(FetchBooks)) {
         let completeURL = getCompleteURL(baseURL, Path.books.rawValue)
-        fetchRequest(with: completeURL, mapTo: [Book].self, completion)
+        fetchRequest(with: completeURL, mapTo: [BookEntity].self, completion)
     }
     
     func fetchOffers(for ISBN: String..., completion: @escaping(FetchOffers)) {

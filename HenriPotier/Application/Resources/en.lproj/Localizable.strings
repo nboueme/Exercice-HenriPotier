@@ -14,3 +14,10 @@
 
 // SelectedBookViewController
 "selectedBook.price" = "%d€";
+
+// BasketViewController
+"basket.hasNotElements" = "Your basket is currently empty!";
+"basket.cell.quantity" = "Quantity: %d";
+
+// Buttons
+"button.addToBasket" = "Add to basket";
