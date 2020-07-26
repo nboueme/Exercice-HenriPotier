@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/nicolasboueme/Documents/ios/HenriPotier/HenriPotier/View/Basket.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:HenriPotier.xcodeproj">
    </FileRef>
    <FileRef

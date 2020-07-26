@@ -41,6 +41,7 @@
 		E57DB40224C9DAC90092598D /* DependenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40124C9DAC90092598D /* DependenciesManager.swift */; };
 		E57DB40524C9E32F0092598D /* BookViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40424C9E32F0092598D /* BookViewModeling.swift */; };
 		E57DB40824C9E3410092598D /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40724C9E3410092598D /* BookViewModel.swift */; };
+		E5B12CD624CDEAE800D4E8A1 /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B12CD524CDE9C200D4E8A1 /* Basket.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		E57DB40124C9DAC90092598D /* DependenciesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesManager.swift; sourceTree = "<group>"; };
 		E57DB40424C9E32F0092598D /* BookViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModeling.swift; sourceTree = "<group>"; };
 		E57DB40724C9E3410092598D /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		E5B12CD424CDE9C200D4E8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Basket.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				E53C916024C89F030068F2FD /* Cells */,
 				E53C912B24C88B020068F2FD /* Main.storyboard */,
+				E5B12CD524CDE9C200D4E8A1 /* Basket.storyboard */,
 				E53C912924C88B020068F2FD /* BookStoreViewController.swift */,
 				E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */,
 				E52F0BB324CB105D0009A793 /* BasketViewController.swift */,
@@ -360,6 +363,7 @@
 			files = (
 				E53C913224C88B080068F2FD /* LaunchScreen.storyboard in Resources */,
 				E53C915524C89D890068F2FD /* Localizable.strings in Resources */,
+				E5B12CD624CDEAE800D4E8A1 /* Basket.storyboard in Resources */,
 				E53C915124C89C560068F2FD /* swiftgen.yml in Resources */,
 				E53C915024C89C560068F2FD /* swiftlint.yml in Resources */,
 				E53C912F24C88B080068F2FD /* Assets.xcassets in Resources */,
@@ -529,6 +533,14 @@
 				E53C915624C89D890068F2FD /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E5B12CD524CDE9C200D4E8A1 /* Basket.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5B12CD424CDE9C200D4E8A1 /* Base */,
+			);
+			name = Basket.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
