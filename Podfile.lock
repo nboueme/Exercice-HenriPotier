@@ -7,9 +7,6 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - SDWebImage (5.8.4):
-    - SDWebImage/Core (= 5.8.4)
-  - SDWebImage/Core (5.8.4)
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.7.1)
@@ -19,7 +16,6 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
-  - SDWebImage (~> 5.0)
   - Swinject
   - SwinjectStoryboard (from `https://github.com/Swinject/SwinjectStoryboard.git`, commit `0ca45c83a8aa398c153d8a036c95abb4343cfa0c`)
 
@@ -30,7 +26,6 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
-    - SDWebImage
     - Swinject
 
 EXTERNAL SOURCES:
@@ -49,10 +44,9 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: f0d5b1c16459949d6ff1cbb6610107946b18e1f8
 
-PODFILE CHECKSUM: b360f31cac68de6286cf632c77de66e727db266b
+PODFILE CHECKSUM: a0bd54e5efa74db837382b723207fbad8ae555d2
 
 COCOAPODS: 1.8.3
