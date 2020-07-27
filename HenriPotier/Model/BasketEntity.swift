@@ -50,7 +50,7 @@ extension BasketEntity {
         if findBasketLine(for: isbn) == nil {
             let basket = find(byId: basketId)
             let basketLineContext = BasketLine(context: CoreDataManager.shared.viewContext)
-            basketLineContext.isbn = isbn
+            basketLineContext.book = BookEntity.find(byISBN: isbn)
             basketLineContext.quantity = Int16(quantity)
             basket?.addToLine(basketLineContext)
             saveContext()
@@ -58,9 +58,12 @@ extension BasketEntity {
     }
     
     static func findBasketLine(for isbn: String) -> BasketLine? {
+        guard let book = BookEntity.find(byISBN: isbn) else { return nil }
+        
         let request: NSFetchRequest<BasketLine> = BasketLine.fetchRequest()
-        request.predicate = NSPredicate(format: "isbn == %@", isbn)
+        request.predicate = NSPredicate(format: "book == %@", book)
         request.fetchLimit = 1
+        
         return try? CoreDataManager.shared.viewContext.fetch(request).first
     }
 }

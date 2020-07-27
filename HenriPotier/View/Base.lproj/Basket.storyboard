@@ -36,18 +36,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wmW-4d-6OR">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="573"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasketLineTableViewCell" id="XWb-6j-1jQ" customClass="BasketLineCellView" customModule="Henri_Potier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="112"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="123.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XWb-6j-1jQ" id="9pw-ci-FJ4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="12F-YY-Q0r" userLabel="Line View">
-                                                    <rect key="frame" x="10" y="10" width="355" height="92"/>
+                                                    <rect key="frame" x="10" y="10" width="355" height="103.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jIW-Oc-2js">
                                                             <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
@@ -56,7 +56,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-Nx-D5T" userLabel="Description View">
-                                                            <rect key="frame" x="105" y="0.0" width="250" height="92"/>
+                                                            <rect key="frame" x="105" y="0.0" width="250" height="103.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henri Potier à l'école des sorciers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maM-1b-xfa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="42.5"/>
@@ -116,13 +116,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZYK-ly-MDu" userLabel="Final price View">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35,00€" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDF-h4-r1L">
+                                        <rect key="frame" x="0.0" y="0.0" width="182.5" height="50"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33,60€" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUe-Xw-7oL">
+                                        <rect key="frame" x="192.5" y="0.0" width="182.5" height="50"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wws-fQ-czD"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ZYK-ly-MDu" firstAttribute="top" secondItem="wmW-4d-6OR" secondAttribute="bottom" id="18G-R2-TBl"/>
+                            <constraint firstItem="98p-mk-JJY" firstAttribute="bottom" secondItem="ZYK-ly-MDu" secondAttribute="bottom" id="9gm-FH-gJ7"/>
                             <constraint firstItem="wmW-4d-6OR" firstAttribute="top" secondItem="98p-mk-JJY" secondAttribute="top" id="C4Q-qX-l4a"/>
-                            <constraint firstItem="98p-mk-JJY" firstAttribute="bottom" secondItem="wmW-4d-6OR" secondAttribute="bottom" id="NMU-Gx-g3L"/>
+                            <constraint firstItem="98p-mk-JJY" firstAttribute="trailing" secondItem="ZYK-ly-MDu" secondAttribute="trailing" id="bs2-Iu-voU"/>
                             <constraint firstItem="wmW-4d-6OR" firstAttribute="leading" secondItem="98p-mk-JJY" secondAttribute="leading" id="dxw-kL-ag6"/>
                             <constraint firstItem="98p-mk-JJY" firstAttribute="trailing" secondItem="wmW-4d-6OR" secondAttribute="trailing" id="pna-az-pcW"/>
+                            <constraint firstItem="ZYK-ly-MDu" firstAttribute="leading" secondItem="98p-mk-JJY" secondAttribute="leading" id="xv2-Jj-XTc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="98p-mk-JJY"/>
                     </view>
@@ -135,11 +158,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="linesTableView" destination="wmW-4d-6OR" id="GSC-Aq-pCz"/>
+                        <outlet property="sumAfterOffer" destination="RUe-Xw-7oL" id="bXn-21-iia"/>
+                        <outlet property="sumBeforeOffer" destination="VDF-h4-r1L" id="DO6-mj-8B3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8K-Ug-UyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="911"/>
+            <point key="canvasLocation" x="1461.5999999999999" y="910.79460269865069"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

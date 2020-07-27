@@ -5,20 +5,21 @@
         <relationship name="line" toMany="YES" deletionRule="Cascade" destinationEntity="BasketLine" inverseName="basket" inverseEntity="BasketLine"/>
     </entity>
     <entity name="BasketLine" representedClassName="BasketLine" syncable="YES" codeGenerationType="class">
-        <attribute name="isbn" attributeType="String"/>
         <attribute name="quantity" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
         <relationship name="basket" maxCount="1" deletionRule="Nullify" destinationEntity="Basket" inverseName="line" inverseEntity="Basket"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="basketLine" inverseEntity="Book"/>
     </entity>
     <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
         <attribute name="cover" optional="YES" attributeType="Binary"/>
         <attribute name="isbn" attributeType="String"/>
-        <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="synopsis" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
+        <relationship name="basketLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasketLine" inverseName="book" inverseEntity="BasketLine"/>
     </entity>
     <elements>
-        <element name="Basket" positionX="-275.43359375" positionY="-107.46875" width="128" height="73"/>
-        <element name="Book" positionX="-451.0625" positionY="-30.4296875" width="128" height="118"/>
+        <element name="Basket" positionX="-320.08984375" positionY="-114.7421875" width="128" height="73"/>
         <element name="BasketLine" positionX="-133.875" positionY="17.1171875" width="128" height="88"/>
+        <element name="Book" positionX="-422.89453125" positionY="43.078125" width="128" height="133"/>
     </elements>
 </model>

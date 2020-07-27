@@ -11,7 +11,7 @@ import CoreData
 struct BookEntity: Decodable {
     let isbn: String
     let title: String
-    let price: Double
+    let price: Float
     let cover: String?
     let synopsis: [String]?
     
@@ -32,6 +32,8 @@ extension BookEntity {
     }
     
     private static func save(_ book: BookEntity) {
+        guard find(byISBN: book.isbn) == nil else { return }
+        
         let bookContext = Book(context: CoreDataManager.shared.viewContext)
         bookContext.isbn = book.isbn
         bookContext.title = book.title

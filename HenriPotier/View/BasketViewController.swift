@@ -8,15 +8,21 @@
 
 import UIKit
 import DZNEmptyDataSet
+import RxSwift
 
 final class BasketViewController: UIViewController {
     @IBOutlet weak var linesTableView: UITableView!
+    @IBOutlet weak var sumBeforeOffer: UILabel!
+    @IBOutlet weak var sumAfterOffer: UILabel!
+    
+    private let disposeBag = DisposeBag()
     
     var viewModel: BasketViewModeling?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        initializeUI()
     }
     
     @IBAction func didTapOnOKButton(_ sender: Any) {
@@ -30,6 +36,19 @@ extension BasketViewController {
         linesTableView.delegate = self
         linesTableView.emptyDataSetSource = self
         linesTableView.tableFooterView = UIView()
+    }
+    
+    private func initializeUI() {
+        guard let basketVM = viewModel,
+            basketVM.basketLineCells.value.count > 0 else {
+            sumBeforeOffer.isHidden = true
+            sumAfterOffer.isHidden = true
+            return
+        }
+        
+        basketVM.finalPriceWithoutOffer.asObservable().bind(to: sumBeforeOffer.rx.attributedText).disposed(by: disposeBag)
+        
+        basketVM.finalPriceWithOffer.asObservable().bind(to: sumAfterOffer.rx.attributedText).disposed(by: disposeBag)
     }
 }
 

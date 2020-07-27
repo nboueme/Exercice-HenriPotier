@@ -13,17 +13,23 @@ class BookViewModel: BookViewModeling {
     var title: BehaviorRelay<String>
     var price: BehaviorRelay<String>
     var cover: BehaviorRelay<Data?>
-    var synopsis: BehaviorRelay<String?>
+    var synopsis: BehaviorRelay<NSAttributedString>
     
     required init(with book: Book) {
-        isbn = BehaviorRelay(value: book.isbn ?? "")
-        title = BehaviorRelay(value: book.title ?? "")
+        self.isbn = BehaviorRelay(value: book.isbn ?? "")
+        self.title = BehaviorRelay(value: book.title ?? "")
+        self.cover = BehaviorRelay(value: book.cover)
         
-        let price = L10n.SelectedBook.price(Int(book.price))
+        let price = L10n.SelectedBook.price(book.price)
         self.price = BehaviorRelay(value: price)
         
-        cover = BehaviorRelay(value: book.cover)
-        synopsis = BehaviorRelay(value: book.synopsis)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        paragraphStyle.hyphenationFactor = 1
+        let attributes: [NSAttributedString.Key: Any] = [.paragraphStyle: paragraphStyle]
+        let text = book.synopsis ?? ""
+        let synopsis = NSAttributedString(string: text, attributes: attributes)
+        self.synopsis = BehaviorRelay(value: synopsis)
     }
     
     required init(isbn: String) {
@@ -31,11 +37,17 @@ class BookViewModel: BookViewModeling {
         
         self.isbn = BehaviorRelay(value: book?.isbn ?? "")
         self.title = BehaviorRelay(value: book?.title ?? "")
+        self.cover = BehaviorRelay(value: book?.cover)
         
-        let price = L10n.SelectedBook.price(Int(book?.price ?? 0))
+        let price = L10n.SelectedBook.price(book?.price ?? 0)
         self.price = BehaviorRelay(value: price)
         
-        self.cover = BehaviorRelay(value: book?.cover)
-        self.synopsis = BehaviorRelay(value: book?.synopsis)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        paragraphStyle.hyphenationFactor = 1
+        let attributes: [NSAttributedString.Key: Any] = [.paragraphStyle: paragraphStyle]
+        let text = book?.synopsis ?? ""
+        let synopsis = NSAttributedString(string: text, attributes: attributes)
+        self.synopsis = BehaviorRelay(value: synopsis)
     }
 }

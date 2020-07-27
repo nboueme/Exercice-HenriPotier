@@ -40,7 +40,7 @@ extension SelectedBookViewController {
         addToBasket.title = L10n.Button.addToBasket
         
         bookViewModel?.title.bind(to: name.rx.text).disposed(by: disposeBag)
-        bookViewModel?.synopsis.bind(to: synopsis.rx.text).disposed(by: disposeBag)
+        bookViewModel?.synopsis.bind(to: synopsis.rx.attributedText).disposed(by: disposeBag)
         bookViewModel?.price.bind(to: price.rx.text).disposed(by: disposeBag)
         
         bookViewModel?.cover.asObservable().subscribe { [weak self] data in

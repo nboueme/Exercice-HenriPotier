@@ -13,7 +13,7 @@ protocol BookViewModeling {
     var title: BehaviorRelay<String> { get }
     var price: BehaviorRelay<String> { get }
     var cover: BehaviorRelay<Data?> { get }
-    var synopsis: BehaviorRelay<String?> { get }
+    var synopsis: BehaviorRelay<NSAttributedString> { get }
     
     init(with book: Book)
     init(isbn: String)

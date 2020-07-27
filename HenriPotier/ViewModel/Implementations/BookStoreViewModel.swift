@@ -9,7 +9,7 @@
 import RxCocoa
 
 class BookStoreViewModel: BookStoreViewModeling {
-    internal var service: BookService
+    var service: BookService
     var booksCells = BehaviorRelay<[BookViewModeling]>(value: [])
     
     required init(service: BookService) {

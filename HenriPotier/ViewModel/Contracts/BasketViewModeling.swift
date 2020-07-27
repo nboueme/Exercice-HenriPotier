@@ -9,11 +9,14 @@
 import RxCocoa
 
 protocol BasketViewModeling {
+    var service: BookService { get }
     var basketLineCells: BehaviorRelay<[BasketLineViewModeling]> { get }
     var bookIsNotAlreadyInBasket: BehaviorRelay<Bool> { get }
     var basketIconName: BehaviorRelay<String> { get }
+    var finalPriceWithoutOffer: BehaviorRelay<NSAttributedString> { get }
+    var finalPriceWithOffer: BehaviorRelay<NSAttributedString> { get }
     func searchBasketLine(for isbn: String)
-    init()
+    init(service: BookService)
 }
 
 extension BasketViewModeling {

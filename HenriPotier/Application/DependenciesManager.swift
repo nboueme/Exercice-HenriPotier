@@ -30,7 +30,7 @@ public final class DependenciesManager {
         container.register(BookStoreViewModeling.self) { _, service in BookStoreViewModel(service: service) }
         container.register(BookViewModeling.self, name: "book") { _, book in BookViewModel(with: book) }
         container.register(BookViewModeling.self, name: "isbn") { _, isbn in BookViewModel(isbn: isbn) }
-        container.register(BasketViewModeling.self) { _ in BasketViewModel() }
+        container.register(BasketViewModeling.self) { _, service in BasketViewModel(service: service) }
         
         // Views
         container.storyboardInitCompleted(BookStoreViewController.self) { resolver, controller in
@@ -38,14 +38,23 @@ public final class DependenciesManager {
                 BookStoreViewModeling.self,
                 argument: container.resolve(BookService.self)!
             )
-            controller.basketViewModel = resolver.resolve(BasketViewModeling.self)
+            controller.basketViewModel = resolver.resolve(
+                BasketViewModeling.self,
+                argument: container.resolve(BookService.self)!
+            )
         }
         container.storyboardInitCompleted(SelectedBookViewController.self) { resolver, controller in
             controller.bookViewModel = resolver.resolve(BookViewModeling.self, name: "isbn", argument: "")
-            controller.basketViewModel = resolver.resolve(BasketViewModeling.self)
+            controller.basketViewModel = resolver.resolve(
+                BasketViewModeling.self,
+                argument: container.resolve(BookService.self)!
+            )
         }
         container.storyboardInitCompleted(BasketViewController.self) { resolver, controller in
-            controller.viewModel = resolver.resolve(BasketViewModeling.self)
+            controller.viewModel = resolver.resolve(
+                BasketViewModeling.self,
+                argument: container.resolve(BookService.self)!
+            )
         }
         
         return container

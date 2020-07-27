@@ -19,14 +19,10 @@ class BasketLineViewModel: BasketLineViewModeling {
         let quantityL10n = L10n.Basket.Cell.quantity(Int(line.quantity))
         quantity = BehaviorRelay(value: quantityL10n)
         
-        let isbn = line.isbn ?? ""
-        let book = BookEntity.find(byISBN: isbn)
-        self.isbn = BehaviorRelay(value: isbn)
-        
+        let book = line.book
+        isbn = BehaviorRelay(value: book?.isbn ?? "")
         title = BehaviorRelay(value: book?.title ?? "")
         cover = BehaviorRelay(value: book?.cover)
-
-        let price = L10n.SelectedBook.price(Int(book?.price ?? 0))
-        self.price = BehaviorRelay(value: price)
+        price = BehaviorRelay(value: L10n.SelectedBook.price(book?.price ?? 0))
     }
 }

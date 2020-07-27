@@ -7,7 +7,7 @@
 //
 
 typealias FetchBooks = (Result<[BookEntity], Error>) -> Void
-typealias FetchOffers = (Result<Offers, Error>) -> Void
+typealias FetchOffers = (Result<CommercialOffers, Error>) -> Void
 
 final class BookService: NetworkLayer {
     private var baseURL = "http://henri-potier.xebia.fr"
@@ -26,6 +26,6 @@ extension BookService {
     
     func fetchOffers(for ISBN: String..., completion: @escaping(FetchOffers)) {
         let completeURL = getCompleteURL(baseURL, Path.books.rawValue, ISBN.joined(separator: ","), Path.commercialOffers.rawValue)
-        fetchRequest(with: completeURL, mapTo: Offers.self, completion)
+        fetchRequest(with: completeURL, mapTo: CommercialOffers.self, completion)
     }
 }

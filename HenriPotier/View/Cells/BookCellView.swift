@@ -38,7 +38,7 @@ extension BookCellView {
     
     private func initializeUI() {
         viewModel?.title.bind(to: title.rx.text).disposed(by: disposeBag)
-        viewModel?.synopsis.bind(to: synopsis.rx.text).disposed(by: disposeBag)
+        viewModel?.synopsis.bind(to: synopsis.rx.attributedText).disposed(by: disposeBag)
         viewModel?.price.bind(to: price.rx.text).disposed(by: disposeBag)
         
         viewModel?.cover.asObservable().subscribe { [weak self] data in

@@ -20,6 +20,14 @@ internal enum L10n {
   internal enum Basket {
     /// Your basket is currently empty!
     internal static let hasNotElements = L10n.tr("Localizable", "basket.hasNotElements")
+    /// %.2f€
+    internal static func sumAfterOffer(_ p1: Float) -> String {
+      return L10n.tr("Localizable", "basket.sumAfterOffer", p1)
+    }
+    /// %.2f€
+    internal static func sumBeforeOffer(_ p1: Float) -> String {
+      return L10n.tr("Localizable", "basket.sumBeforeOffer", p1)
+    }
     internal enum Cell {
       /// Quantity: %d
       internal static func quantity(_ p1: Int) -> String {
@@ -39,8 +47,8 @@ internal enum L10n {
   }
 
   internal enum SelectedBook {
-    /// %d€
-    internal static func price(_ p1: Int) -> String {
+    /// %.2f€
+    internal static func price(_ p1: Float) -> String {
       return L10n.tr("Localizable", "selectedBook.price", p1)
     }
   }

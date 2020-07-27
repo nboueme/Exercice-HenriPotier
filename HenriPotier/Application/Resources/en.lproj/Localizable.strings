@@ -13,11 +13,13 @@
 "bookStore.hasNotElements" = "No books are currently on sale. :(";
 
 // SelectedBookViewController
-"selectedBook.price" = "%d€";
+"selectedBook.price" = "%.2f€";
 
 // BasketViewController
 "basket.hasNotElements" = "Your basket is currently empty!";
 "basket.cell.quantity" = "Quantity: %d";
+"basket.sumBeforeOffer" = "%.2f€";
+"basket.sumAfterOffer" = "%.2f€";
 
 // Buttons
 "button.addToBasket" = "Add to basket";
