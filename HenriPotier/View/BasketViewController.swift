@@ -39,16 +39,26 @@ extension BasketViewController {
     }
     
     private func initializeUI() {
-        guard let basketVM = viewModel,
-            basketVM.basketLineCells.value.count > 0 else {
-            sumBeforeOffer.isHidden = true
-            sumAfterOffer.isHidden = true
-            return
-        }
+        guard let basketVM = viewModel else { return }
+        
+        basketVM.basketLineCells.asObservable().subscribe { [weak self] lines in
+            guard let strongSelf = self else { return }
+            guard let lines = lines.element else { return }
+            
+            strongSelf.sumBeforeOffer.isHidden = lines.count > 0 ? false : true
+            strongSelf.sumAfterOffer.isHidden = lines.count > 0 ? false : true
+            strongSelf.linesTableView.reloadData()
+        }.disposed(by: disposeBag)
         
         basketVM.finalPriceWithoutOffer.asObservable().bind(to: sumBeforeOffer.rx.attributedText).disposed(by: disposeBag)
         
         basketVM.finalPriceWithOffer.asObservable().bind(to: sumAfterOffer.rx.attributedText).disposed(by: disposeBag)
+    }
+}
+
+extension BasketViewController: BasketLineDelegate {
+    func deleteLine(for isbn: String) {
+        viewModel?.deleteLine(for: isbn)
     }
 }
 
@@ -59,6 +69,7 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BasketLineCellView.identifier, for: indexPath) as! BasketLineCellView
+        cell.delegate = self
         cell.viewModel = viewModel?.basketLineCells.value[indexPath.row]
         return cell
     }

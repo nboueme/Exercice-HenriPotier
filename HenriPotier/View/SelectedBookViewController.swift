@@ -29,6 +29,12 @@ final class SelectedBookViewController: UIViewController {
         basketState()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationC = segue.destination as? UINavigationController else { return }
+        guard let basketVC = navigationC.viewControllers.first as? BasketViewController else { return }
+        basketVC.viewModel = basketViewModel
+    }
+    
     @IBAction func didTapOnAddToBasketButton(_ sender: Any) {
         guard let bookVM = bookViewModel else { return }
         basketViewModel?.addBasketLine(for: 0, isbn: bookVM.isbn.value)

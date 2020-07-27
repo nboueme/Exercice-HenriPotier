@@ -29,6 +29,14 @@ class BasketViewModel: BasketViewModeling {
         let isNotAlreadyInBasket = BasketEntity.findBasketLine(for: isbn) == nil ? true : false
         bookIsNotAlreadyInBasket.accept(isNotAlreadyInBasket)
     }
+    
+    func deleteLine(for isbn: String) {
+        let cells = getBasketLines(for: basketId)
+            .filter { $0.book?.isbn != isbn }
+            .map { BasketLineViewModel(with: $0) } as [BasketLineViewModeling]
+        basketLineCells.accept(cells)
+        bookIsNotAlreadyInBasket.accept(true)
+    }
 }
 
 extension BasketViewModel {

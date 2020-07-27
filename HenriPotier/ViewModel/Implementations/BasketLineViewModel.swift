@@ -25,4 +25,8 @@ class BasketLineViewModel: BasketLineViewModeling {
         cover = BehaviorRelay(value: book?.cover)
         price = BehaviorRelay(value: L10n.SelectedBook.price(book?.price ?? 0))
     }
+    
+    func deleteBasketLine(for basketId: Int, isbn: String) {
+        BasketEntity.deleteBasketLine(for: basketId, isbn: isbn)
+    }
 }

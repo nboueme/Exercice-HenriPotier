@@ -16,6 +16,7 @@ protocol BasketViewModeling {
     var finalPriceWithoutOffer: BehaviorRelay<NSAttributedString> { get }
     var finalPriceWithOffer: BehaviorRelay<NSAttributedString> { get }
     func searchBasketLine(for isbn: String)
+    func deleteLine(for isbn: String)
     init(service: BookService)
 }
 

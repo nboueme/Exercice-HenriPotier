@@ -57,6 +57,17 @@ extension BasketEntity {
         }
     }
     
+    static func deleteBasketLine(for basketId: Int, isbn: String) {
+        let basket = find(byId: basketId)
+        guard let lines = basket?.line?.allObjects as? [BasketLine] else { return }
+        
+        for line in lines where line.book?.isbn == isbn {
+            CoreDataManager.shared.viewContext.delete(line)
+        }
+        
+        saveContext()
+    }
+    
     static func findBasketLine(for isbn: String) -> BasketLine? {
         guard let book = BookEntity.find(byISBN: isbn) else { return nil }
         

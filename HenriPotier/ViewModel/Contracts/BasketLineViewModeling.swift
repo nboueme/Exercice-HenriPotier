@@ -15,4 +15,5 @@ protocol BasketLineViewModeling {
     var price: BehaviorRelay<String> { get }
     var cover: BehaviorRelay<Data?> { get }
     init(with line: BasketLine)
+    func deleteBasketLine(for basketId: Int, isbn: String)
 }

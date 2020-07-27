@@ -40,14 +40,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasketLineTableViewCell" id="XWb-6j-1jQ" customClass="BasketLineCellView" customModule="Henri_Potier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="123.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XWb-6j-1jQ" id="9pw-ci-FJ4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="12F-YY-Q0r" userLabel="Line View">
-                                                    <rect key="frame" x="10" y="10" width="355" height="103.5"/>
+                                                    <rect key="frame" x="10" y="10" width="355" height="113"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jIW-Oc-2js">
                                                             <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
@@ -56,7 +56,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-Nx-D5T" userLabel="Description View">
-                                                            <rect key="frame" x="105" y="0.0" width="250" height="103.5"/>
+                                                            <rect key="frame" x="105" y="0.0" width="250" height="113"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henri Potier à l'école des sorciers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maM-1b-xfa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="42.5"/>
@@ -81,13 +81,26 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aei-9X-WV0">
+                                                                    <rect key="frame" x="198" y="80" width="52" height="33"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <state key="normal" title="Delete">
+                                                                        <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="didTapOnDeleteButton:" destination="XWb-6j-1jQ" eventType="touchUpInside" id="ynL-c2-PR5"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="Aei-9X-WV0" secondAttribute="bottom" id="JdD-QX-21O"/>
                                                                 <constraint firstItem="maM-1b-xfa" firstAttribute="leading" secondItem="9fc-Nx-D5T" secondAttribute="leading" id="P3t-sq-ISW"/>
                                                                 <constraint firstItem="Jrb-zh-d4O" firstAttribute="top" secondItem="maM-1b-xfa" secondAttribute="bottom" id="PvU-N3-nSM"/>
+                                                                <constraint firstItem="Aei-9X-WV0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9fc-Nx-D5T" secondAttribute="leading" id="QKh-pz-ZVh"/>
+                                                                <constraint firstItem="Aei-9X-WV0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jrb-zh-d4O" secondAttribute="bottom" constant="10" id="Ugb-m0-w5J"/>
                                                                 <constraint firstItem="maM-1b-xfa" firstAttribute="top" secondItem="9fc-Nx-D5T" secondAttribute="top" id="hDX-af-a2H"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Jrb-zh-d4O" secondAttribute="trailing" id="k41-Rv-xlH"/>
-                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jrb-zh-d4O" secondAttribute="bottom" id="ly5-HR-exf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Aei-9X-WV0" secondAttribute="trailing" id="qya-AR-8m1"/>
                                                                 <constraint firstAttribute="trailing" secondItem="maM-1b-xfa" secondAttribute="trailing" id="rQN-HM-T1K"/>
                                                                 <constraint firstItem="Jrb-zh-d4O" firstAttribute="leading" secondItem="9fc-Nx-D5T" secondAttribute="leading" id="ueA-aB-glW"/>
                                                             </constraints>

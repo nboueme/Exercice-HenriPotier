@@ -9,9 +9,15 @@
 import UIKit
 import RxSwift
 
+protocol BasketLineDelegate: class {
+    func deleteLine(for isbn: String)
+}
+
 final class BasketLineCellView: UITableViewCell {
     static let identifier = "BasketLineTableViewCell"
 
+    weak var delegate: BasketLineDelegate?
+    
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var quantity: UILabel!
@@ -23,6 +29,12 @@ final class BasketLineCellView: UITableViewCell {
         didSet {
             initializeUI()
         }
+    }
+    
+    @IBAction func didTapOnDeleteButton(_ sender: Any) {
+        guard let viewModel = viewModel else { return }
+        viewModel.deleteBasketLine(for: 0, isbn: viewModel.isbn.value)
+        delegate?.deleteLine(for: viewModel.isbn.value)
     }
 }
 
