@@ -73,23 +73,16 @@ extension BasketViewModel {
     }
     
     private func getTotalPriceAfterOffer(for basketAmount: Float, and booksISBN: [String]) {
-        var prices: [Float] = []
+        var prices: [CommercialOffer.OfferType: Float] = [:]
         
         service.fetchOffers(for: booksISBN.joined(separator: ",")) { data in
             guard let data = try? data.get() else { return }
+            
             data.offers.forEach { offer in
-                switch offer.type {
-                case .percentage:
-                    prices.append(basketAmount - basketAmount * Float(offer.value) / 100)
-                case .minus:
-                    prices.append(basketAmount - Float(offer.value))
-                case .slice:
-                    guard let sliceValue = offer.sliceValue else { break }
-                    prices.append(basketAmount - Float(Int(basketAmount) / sliceValue * offer.value))
-                }
+                prices[offer.type] = offer.getReduction(for: basketAmount)
             }
             
-            let text = L10n.Basket.sumAfterOffer(prices.min() ?? 0)
+            let text = L10n.Basket.sumAfterOffer(prices.values.min() ?? 0)
             self.finalPriceWithOffer.accept(NSAttributedString(string: text))
         }
     }

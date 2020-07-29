@@ -76,15 +76,75 @@ class BasketViewModelTests: XCTestCase {
         XCTAssertEqual(finalPrice?.string, "50.00€", "Final price with offer should be equal to 50.00€")
     }
     
-//    func test_basketOfferTypeShouldBePercentage() {
-//        
-//    }
-//    
-//    func test_basketOfferTypeShouldBeMinus() {
-//        
-//    }
-//    
-//    func test_basketOfferTypeShouldBeSlice() {
-//        
-//    }
+    func test_basketOfferTypeShouldBePercentage() {
+        let requestExpectation = expectation(description: "Alamofire")
+        
+        let basketAmount = BookEntity.find(byISBN: isbnVol1)!.price
+        
+        var reduction: [CommercialOffer.OfferType: Float] = [:]
+        
+        viewModel.service.fetchOffers(for: isbnVol1) { data in
+            try? data.get().offers.forEach { offer in
+                reduction[offer.type] = offer.getReduction(for: basketAmount)
+            }
+            
+            requestExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0)
+        
+        let bestOffer = reduction.filter { $1 == reduction.values.min() }.first
+        XCTAssertEqual(bestOffer?.key, CommercialOffer.OfferType.percentage, "Best offer type should be percentage.")
+    }
+    
+    func test_basketOfferTypeShouldBeMinus() {
+        let requestExpectation = expectation(description: "Alamofire")
+        
+        let priceVol1 = BookEntity.find(byISBN: isbnVol1)!.price
+        let priceVol2 = BookEntity.find(byISBN: isbnVol2)!.price
+        let basketAmount = priceVol1 + priceVol2
+        
+        var reduction: [CommercialOffer.OfferType: Float] = [:]
+        
+        viewModel.service.fetchOffers(for: isbnVol1, isbnVol2) { data in
+            try? data.get().offers.forEach { offer in
+                reduction[offer.type] = offer.getReduction(for: basketAmount)
+            }
+            
+            requestExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0)
+        
+        let bestOffer = reduction.filter { $1 == reduction.values.min() }.first
+        XCTAssertEqual(bestOffer?.key, CommercialOffer.OfferType.minus, "Best offer type should be minus.")
+    }
+    
+    func test_basketOfferTypeShouldBeSlice() {
+        let requestExpectation = expectation(description: "Alamofire")
+        
+        let priceVol1 = BookEntity.find(byISBN: isbnVol1)!.price
+        var basketAmount: Float = 0
+        var isbnArray = [String]()
+        
+        for _ in 1...7 {
+            basketAmount += priceVol1
+            isbnArray.append(isbnVol1)
+        }
+        
+        var reduction: [CommercialOffer.OfferType: Float] = [:]
+        
+        viewModel.service.fetchOffers(for: isbnArray.joined(separator: ",")) { data in
+            try? data.get().offers.forEach { offer in
+                reduction[offer.type] = offer.getReduction(for: basketAmount)
+            }
+            
+            requestExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0)
+        
+        let bestOffer = reduction.filter { $1 == reduction.values.min() }.first
+        XCTAssertEqual(bestOffer?.key, CommercialOffer.OfferType.slice, "Best offer type should be slice.")
+    }
 }

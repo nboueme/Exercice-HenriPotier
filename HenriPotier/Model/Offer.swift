@@ -40,6 +40,25 @@ struct CommercialOffer: Decodable {
     enum OfferError: Error {
         case unknownValue
     }
+    
+    func getReduction(for basketAmount: Float) -> Float {
+        let reduction: Float
+        
+        switch type {
+        case .percentage:
+            reduction = basketAmount * Float(value) / 100
+        case .minus:
+            reduction = Float(value)
+        case .slice:
+            guard let sliceValue = sliceValue else {
+                reduction = 0
+                return basketAmount - reduction
+            }
+            reduction = Float(Int(basketAmount) / sliceValue * value)
+        }
+        
+        return basketAmount - reduction
+    }
 }
 
 struct CommercialOffers: Decodable {

@@ -46,6 +46,7 @@
 		E57DB40824C9E3410092598D /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40724C9E3410092598D /* BookViewModel.swift */; };
 		E5B12CD624CDEAE800D4E8A1 /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B12CD524CDE9C200D4E8A1 /* Basket.storyboard */; };
 		E5D1DCA824D1ADF6003342AD /* CoreDataManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1DCA724D1ADF6003342AD /* CoreDataManager+Extension.swift */; };
+		E5D1DCAC24D1D364003342AD /* BookServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1DCAB24D1D364003342AD /* BookServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		E57DB40724C9E3410092598D /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		E5B12CD424CDE9C200D4E8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Basket.storyboard; sourceTree = "<group>"; };
 		E5D1DCA724D1ADF6003342AD /* CoreDataManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Extension.swift"; sourceTree = "<group>"; };
+		E5D1DCAB24D1D364003342AD /* BookServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				E5D1DCA924D1ADFE003342AD /* Extensions */,
+				E5D1DCAA24D1D34F003342AD /* Model */,
 				E521CD2024D0C68200839714 /* ViewModel */,
 				E53C913E24C88B080068F2FD /* Info.plist */,
 			);
@@ -319,6 +322,14 @@
 				E5D1DCA724D1ADF6003342AD /* CoreDataManager+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E5D1DCAA24D1D34F003342AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1DCAB24D1D364003342AD /* BookServiceTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D1DCAC24D1D364003342AD /* BookServiceTests.swift in Sources */,
 				E521CD2724D0DB9B00839714 /* BasketViewModelTests.swift in Sources */,
 				E5D1DCA824D1ADF6003342AD /* CoreDataManager+Extension.swift in Sources */,
 				E53C913D24C88B080068F2FD /* BookStoreViewModelTests.swift in Sources */,
