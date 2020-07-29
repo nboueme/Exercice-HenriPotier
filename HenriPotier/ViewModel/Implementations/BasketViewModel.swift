@@ -16,7 +16,7 @@ class BasketViewModel: BasketViewModeling {
     var finalPriceWithoutOffer = BehaviorRelay<NSAttributedString>(value: NSAttributedString(string: L10n.Basket.sumBeforeOffer(0)))
     var finalPriceWithOffer = BehaviorRelay<NSAttributedString>(value: NSAttributedString(string: L10n.Basket.sumAfterOffer(0)))
     
-    private var basketId = 0
+    private var basketId = Constant.basketID
     
     required init(service: BookService) {
         self.service = service
@@ -25,9 +25,29 @@ class BasketViewModel: BasketViewModeling {
         getTotalPrice(for: basketId)
     }
     
+    func getBasketLinesCells(for basketId: Int) {
+        let cells = getBasketLines(for: basketId)
+            .map { BasketLineViewModel(with: $0) } as [BasketLineViewModeling]
+        basketLineCells.accept(cells)
+    }
+    
     func searchBasketLine(for isbn: String) {
         let isNotAlreadyInBasket = BasketEntity.findBasketLine(for: isbn) == nil ? true : false
         bookIsNotAlreadyInBasket.accept(isNotAlreadyInBasket)
+    }
+    
+    func getTotalPrice(for basketId: Int) {
+        var basketAmount: Float = 0
+        var booksISBN = [String]()
+        
+        getBasketLines(for: basketId).forEach { line in
+            guard let book = line.book else { return }
+            basketAmount += book.price
+            booksISBN.append(book.isbn ?? "")
+        }
+        
+        getTotalPriceBeforeOffer(for: basketAmount)
+        getTotalPriceAfterOffer(for: basketAmount, and: booksISBN)
     }
 }
 
@@ -44,26 +64,6 @@ extension BasketViewModel {
                 BasketState.filled.rawValue :
                 BasketState.empty.rawValue
         basketIconName.accept(iconName)
-    }
-    
-    private func getBasketLinesCells(for basketId: Int) {
-        let cells = getBasketLines(for: basketId)
-            .map { BasketLineViewModel(with: $0) } as [BasketLineViewModeling]
-        basketLineCells.accept(cells)
-    }
-    
-    private func getTotalPrice(for basketId: Int) {
-        var basketAmount: Float = 0
-        var booksISBN = [String]()
-        
-        getBasketLines(for: basketId).forEach { line in
-            guard let book = line.book else { return }
-            basketAmount += book.price
-            booksISBN.append(book.isbn ?? "")
-        }
-        
-        getTotalPriceBeforeOffer(for: basketAmount)
-        getTotalPriceAfterOffer(for: basketAmount, and: booksISBN)
     }
     
     private func getTotalPriceBeforeOffer(for basketAmount: Float) {

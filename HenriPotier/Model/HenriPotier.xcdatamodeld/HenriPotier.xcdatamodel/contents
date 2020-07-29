@@ -15,7 +15,7 @@
         <attribute name="price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="synopsis" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="basketLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasketLine" inverseName="book" inverseEntity="BasketLine"/>
+        <relationship name="basketLine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BasketLine" inverseName="book" inverseEntity="BasketLine"/>
     </entity>
     <elements>
         <element name="Basket" positionX="-320.08984375" positionY="-114.7421875" width="128" height="73"/>

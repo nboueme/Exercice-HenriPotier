@@ -7,6 +7,7 @@
 //
 
 import Swinject
+import SwinjectAutoregistration
 import SwinjectStoryboard
 
 public final class DependenciesManager {
@@ -24,36 +25,40 @@ public final class DependenciesManager {
         container.storyboardInitCompleted(UINavigationController.self) { _, _ in }
         
         // Services
-        container.register(BookService.self) { _ in BookService() }
+        container.autoregister(BookService.self, initializer: BookService.init)
         
         // ViewModels
-        container.register(BookStoreViewModeling.self) { _, service in BookStoreViewModel(service: service) }
-        container.register(BookViewModeling.self, name: "book") { _, book in BookViewModel(with: book) }
-        container.register(BookViewModeling.self, name: "isbn") { _, isbn in BookViewModel(isbn: isbn) }
-        container.register(BasketViewModeling.self) { _, service in BasketViewModel(service: service) }
+        container.autoregister(BookStoreViewModeling.self, argument: BookService.self, initializer: BookStoreViewModel.init)
+        container.autoregister(BookViewModeling.self, name: Constant.initBookViewModelingWithBook, argument: Book.self, initializer: BookViewModel.init)
+        container.autoregister(BookViewModeling.self, name: Constant.initBookViewModelingWithISBN, argument: String.self, initializer: BookViewModel.init)
+        container.autoregister(BasketViewModeling.self, argument: BookService.self, initializer: BasketViewModel.init)
         
         // Views
         container.storyboardInitCompleted(BookStoreViewController.self) { resolver, controller in
-            controller.bookStoreViewModel = resolver.resolve(
+            controller.bookStoreViewModel = resolver ~> (
                 BookStoreViewModeling.self,
-                argument: container.resolve(BookService.self)!
+                argument: resolver ~> BookService.self
             )
-            controller.basketViewModel = resolver.resolve(
+            controller.basketViewModel = resolver ~> (
                 BasketViewModeling.self,
-                argument: container.resolve(BookService.self)!
+                argument: resolver ~> BookService.self
             )
         }
         container.storyboardInitCompleted(SelectedBookViewController.self) { resolver, controller in
-            controller.bookViewModel = resolver.resolve(BookViewModeling.self, name: "isbn", argument: "")
-            controller.basketViewModel = resolver.resolve(
+            controller.bookViewModel = resolver ~> (
+                BookViewModeling.self,
+                name: Constant.initBookViewModelingWithISBN,
+                argument: String()
+            )
+            controller.basketViewModel = resolver ~> (
                 BasketViewModeling.self,
-                argument: container.resolve(BookService.self)!
+                argument: resolver ~> BookService.self
             )
         }
         container.storyboardInitCompleted(BasketViewController.self) { resolver, controller in
-            controller.viewModel = resolver.resolve(
+            controller.viewModel = resolver ~> (
                 BasketViewModeling.self,
-                argument: container.resolve(BookService.self)!
+                argument: resolver ~> BookService.self
             )
         }
         

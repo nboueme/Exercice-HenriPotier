@@ -34,7 +34,7 @@ final class BookStoreViewController: UIViewController {
         selectedBookVC.bookViewModel = DependenciesManager
             .shared
             .container
-            .resolve(BookViewModeling.self, name: "isbn", argument: book.isbn.value)
+            .resolve(BookViewModeling.self, name: Constant.initBookViewModelingWithISBN, argument: book.isbn.value)
         selectedBookVC.basketViewModel = basketViewModel
     }
 }

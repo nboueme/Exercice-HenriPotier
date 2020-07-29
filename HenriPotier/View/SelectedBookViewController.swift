@@ -31,7 +31,7 @@ final class SelectedBookViewController: UIViewController {
     
     @IBAction func didTapOnAddToBasketButton(_ sender: Any) {
         guard let bookVM = bookViewModel else { return }
-        basketViewModel?.addBasketLine(for: 0, isbn: bookVM.isbn.value)
+        basketViewModel?.addBasketLine(for: Constant.basketID, isbn: bookVM.isbn.value)
     }
 }
 

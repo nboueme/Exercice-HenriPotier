@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		158E980EB459AE18A6E3B835 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */; };
+		A205E947A3097E92A1465CB0 /* Pods_HenriPotierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E500C9526B8D41245ECC86C0 /* Pods_HenriPotierTests.framework */; };
+		E521CD2324D0D15000839714 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521CD2224D0D15000839714 /* Constant.swift */; };
+		E521CD2724D0DB9B00839714 /* BasketViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521CD2624D0DB9B00839714 /* BasketViewModelTests.swift */; };
 		E52F0BA124C9F9530009A793 /* SelectedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */; };
 		E52F0BA924CA2C610009A793 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BA824CA2C610009A793 /* BookService.swift */; };
 		E52F0BAB24CA47F50009A793 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */; };
@@ -20,7 +23,7 @@
 		E53C912D24C88B020068F2FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53C912B24C88B020068F2FD /* Main.storyboard */; };
 		E53C912F24C88B080068F2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53C912E24C88B080068F2FD /* Assets.xcassets */; };
 		E53C913224C88B080068F2FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53C913024C88B080068F2FD /* LaunchScreen.storyboard */; };
-		E53C913D24C88B080068F2FD /* HenriPotierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C913C24C88B080068F2FD /* HenriPotierTests.swift */; };
+		E53C913D24C88B080068F2FD /* BookStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C913C24C88B080068F2FD /* BookStoreViewModelTests.swift */; };
 		E53C915024C89C560068F2FD /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E53C914E24C89C560068F2FD /* swiftlint.yml */; };
 		E53C915124C89C560068F2FD /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E53C914F24C89C560068F2FD /* swiftgen.yml */; };
 		E53C915524C89D890068F2FD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E53C915724C89D890068F2FD /* Localizable.strings */; };
@@ -42,6 +45,7 @@
 		E57DB40524C9E32F0092598D /* BookViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40424C9E32F0092598D /* BookViewModeling.swift */; };
 		E57DB40824C9E3410092598D /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DB40724C9E3410092598D /* BookViewModel.swift */; };
 		E5B12CD624CDEAE800D4E8A1 /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B12CD524CDE9C200D4E8A1 /* Basket.storyboard */; };
+		E5D1DCA824D1ADF6003342AD /* CoreDataManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1DCA724D1ADF6003342AD /* CoreDataManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +59,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3554C920FC16B0B062837E6F /* Pods-HenriPotierTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.release.xcconfig"; path = "Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.release.xcconfig"; sourceTree = "<group>"; };
 		538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7129D91EE3C8C23FA3683D1C /* Pods-HenriPotierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.debug.xcconfig"; path = "Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8936CEAB54709ABE0303F340 /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
+		A32A905EE993C4462E61BD76 /* Pods-HenriPotier-HenriPotierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier-HenriPotierTests.debug.xcconfig"; path = "Target Support Files/Pods-HenriPotier-HenriPotierTests/Pods-HenriPotier-HenriPotierTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
+		DD3E280EEF573255F3B417EC /* Pods-HenriPotier-HenriPotierTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier-HenriPotierTests.release.xcconfig"; path = "Target Support Files/Pods-HenriPotier-HenriPotierTests/Pods-HenriPotier-HenriPotierTests.release.xcconfig"; sourceTree = "<group>"; };
+		E500C9526B8D41245ECC86C0 /* Pods_HenriPotierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E521CD2224D0D15000839714 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E521CD2624D0DB9B00839714 /* BasketViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModelTests.swift; sourceTree = "<group>"; };
 		E52F0BA024C9F9530009A793 /* SelectedBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBookViewController.swift; sourceTree = "<group>"; };
 		E52F0BA824CA2C610009A793 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		E52F0BAA24CA47F50009A793 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
@@ -73,7 +84,7 @@
 		E53C913124C88B080068F2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E53C913324C88B080068F2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53C913824C88B080068F2FD /* HenriPotierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HenriPotierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E53C913C24C88B080068F2FD /* HenriPotierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierTests.swift; sourceTree = "<group>"; };
+		E53C913C24C88B080068F2FD /* BookStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewModelTests.swift; sourceTree = "<group>"; };
 		E53C913E24C88B080068F2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53C914E24C89C560068F2FD /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 		E53C914F24C89C560068F2FD /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -96,6 +107,7 @@
 		E57DB40424C9E32F0092598D /* BookViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModeling.swift; sourceTree = "<group>"; };
 		E57DB40724C9E3410092598D /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		E5B12CD424CDE9C200D4E8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Basket.storyboard; sourceTree = "<group>"; };
+		E5D1DCA724D1ADF6003342AD /* CoreDataManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A205E947A3097E92A1465CB0 /* Pods_HenriPotierTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				538599D3C2815E4CB2863EC1 /* Pods_HenriPotier.framework */,
+				E500C9526B8D41245ECC86C0 /* Pods_HenriPotierTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,8 +144,29 @@
 			children = (
 				D2B5B74DC171AC798BDCA88C /* Pods-HenriPotier.debug.xcconfig */,
 				8936CEAB54709ABE0303F340 /* Pods-HenriPotier.release.xcconfig */,
+				7129D91EE3C8C23FA3683D1C /* Pods-HenriPotierTests.debug.xcconfig */,
+				3554C920FC16B0B062837E6F /* Pods-HenriPotierTests.release.xcconfig */,
+				A32A905EE993C4462E61BD76 /* Pods-HenriPotier-HenriPotierTests.debug.xcconfig */,
+				DD3E280EEF573255F3B417EC /* Pods-HenriPotier-HenriPotierTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E521CD2024D0C68200839714 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E53C913C24C88B080068F2FD /* BookStoreViewModelTests.swift */,
+				E521CD2624D0DB9B00839714 /* BasketViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E521CD2124D0D13D00839714 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E521CD2224D0D15000839714 /* Constant.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E53C911924C88B020068F2FD = {
@@ -171,7 +206,8 @@
 		E53C913B24C88B080068F2FD /* HenriPotierTests */ = {
 			isa = PBXGroup;
 			children = (
-				E53C913C24C88B080068F2FD /* HenriPotierTests.swift */,
+				E5D1DCA924D1ADFE003342AD /* Extensions */,
+				E521CD2024D0C68200839714 /* ViewModel */,
 				E53C913E24C88B080068F2FD /* Info.plist */,
 			);
 			path = HenriPotierTests;
@@ -180,6 +216,7 @@
 		E53C914724C892D30068F2FD /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				E521CD2124D0D13D00839714 /* Utils */,
 				E53C914924C8930B0068F2FD /* Resources */,
 				E53C915224C89C8F0068F2FD /* Generated */,
 				E53C913024C88B080068F2FD /* LaunchScreen.storyboard */,
@@ -276,6 +313,14 @@
 			path = Implementations;
 			sourceTree = "<group>";
 		};
+		E5D1DCA924D1ADFE003342AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1DCA724D1ADF6003342AD /* CoreDataManager+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,9 +349,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E53C914424C88B080068F2FD /* Build configuration list for PBXNativeTarget "HenriPotierTests" */;
 			buildPhases = (
+				775ACED5C2A0D4E837D1C8D2 /* [CP] Check Pods Manifest.lock */,
 				E53C913424C88B080068F2FD /* Sources */,
 				E53C913524C88B080068F2FD /* Frameworks */,
 				E53C913624C88B080068F2FD /* Resources */,
+				A7109ECFB9F3179FB0FC45E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,6 +467,45 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		775ACED5C2A0D4E837D1C8D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HenriPotierTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7109ECFB9F3179FB0FC45E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E53C914C24C89BD90068F2FD /* 💪 SwiftLint 👌 */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +569,7 @@
 				E53C915E24C89DCE0068F2FD /* Strings.swift in Sources */,
 				E53C916224C89F330068F2FD /* BookCellView.swift in Sources */,
 				E53C915D24C89DCE0068F2FD /* Assets.swift in Sources */,
+				E521CD2324D0D15000839714 /* Constant.swift in Sources */,
 				E53C916624C8A69D0068F2FD /* Offer.swift in Sources */,
 				E57DB3FE24C9D82C0092598D /* BookStoreViewModel.swift in Sources */,
 				E5419D1D24CB314700A4FE80 /* BasketViewModel.swift in Sources */,
@@ -496,7 +583,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E53C913D24C88B080068F2FD /* HenriPotierTests.swift in Sources */,
+				E521CD2724D0DB9B00839714 /* BasketViewModelTests.swift in Sources */,
+				E5D1DCA824D1ADF6003342AD /* CoreDataManager+Extension.swift in Sources */,
+				E53C913D24C88B080068F2FD /* BookStoreViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,8 +791,8 @@
 		};
 		E53C914524C88B080068F2FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7129D91EE3C8C23FA3683D1C /* Pods-HenriPotierTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B96N5PJKRG;
@@ -718,14 +807,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HenriPotier.app/HenriPotier";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Henri Potier.app/Henri Potier";
 			};
 			name = Debug;
 		};
 		E53C914624C88B080068F2FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3554C920FC16B0B062837E6F /* Pods-HenriPotierTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B96N5PJKRG;
@@ -740,7 +829,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HenriPotier.app/HenriPotier";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Henri Potier.app/Henri Potier";
 			};
 			name = Release;
 		};

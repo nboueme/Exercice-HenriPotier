@@ -47,15 +47,7 @@ extension BookEntity {
             bookContext.cover = data
         }
         
-        saveContext()
-    }
-    
-    private static func saveContext() {
-        do {
-            try CoreDataManager.shared.viewContext.save()
-        } catch let error as NSError {
-            print("error: \(error)")
-        }
+        CoreDataManager.shared.saveContext()
     }
     
     static var all: [Book] {
