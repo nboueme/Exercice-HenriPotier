@@ -365,6 +365,7 @@
 				E53C913524C88B080068F2FD /* Frameworks */,
 				E53C913624C88B080068F2FD /* Resources */,
 				A7109ECFB9F3179FB0FC45E6 /* [CP] Embed Pods Frameworks */,
+				E5D1DCAD24D20B36003342AD /* 💪 Slather 👌 */,
 			);
 			buildRules = (
 			);
@@ -553,6 +554,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
 		};
+		E5D1DCAD24D20B36003342AD /* 💪 Slather 👌 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "💪 Slather 👌";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which slather >/dev/null; then\n  slather coverage --html --scheme HenriPotier --workspace HenriPotier.xcworkspace HenriPotier.xcodeproj\nelse\n  echo \"warning: slather not installed, download from https://github.com/SlatherOrg/slather\"\nfi \n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -655,6 +674,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -716,6 +736,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
