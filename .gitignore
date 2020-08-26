@@ -4,6 +4,9 @@
 ## Various settings
 xcuserdata/
 
+## Coverage report
+html/
+
 ## Ruby
 .bundle/
 vendor/
